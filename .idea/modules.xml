@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/AFA.iml" filepath="$PROJECT_DIR$/.idea/AFA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../CursoEmVideo/.idea/CursoEmVideo.iml" filepath="$PROJECT_DIR$/../CursoEmVideo/.idea/CursoEmVideo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ProjectEducation/.idea/ProjectEducation.iml" filepath="$PROJECT_DIR$/../ProjectEducation/.idea/ProjectEducation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../PythonBasicOO/.idea/PythonBasicOO.iml" filepath="$PROJECT_DIR$/../PythonBasicOO/.idea/PythonBasicOO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../PythonBasico/.idea/PythonBasico.iml" filepath="$PROJECT_DIR$/../PythonBasico/.idea/PythonBasico.iml" />
+    </modules>
+  </component>
+</project>

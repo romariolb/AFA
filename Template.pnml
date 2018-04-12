@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE workspaceElements PUBLIC "-//CPN//DTD CPNXML 1.0//EN" "http://cpntools.org/DTD/6/cpn.dtd">
+
+<pnml>
+      <net id="...">
+        (<page>)
+		<!Provavelmente não terá paginas de transições separadas de uma mesma rede>
+        <name>
+          <text>name of Petri net</text>
+        </name>
+        <transition id="...">
+          <name>
+            <text>label of transition</text>
+            <graphics>
+              <offset x="0" y="0"/>
+            </graphics>
+          </name>
+          <graphics>
+            <position x="73" y="149"/>
+          </graphics>
+        </transition>
+        <!...>
+        <place id="...">
+          <name>
+            <text>label of place</text>
+            <graphics>
+              <offset x="0" y="0"/>
+            </graphics>
+          </name>
+          <graphics>
+            <position x="73" y="149"/>
+          </graphics>
+          <initialMarking>
+            <text>1</text>
+          </initialMarking>
+        </place>
+        <!...>
+        <arc id="..." source="id of source event" target="id of target event">
+          <inscription>
+            <text>1</text>
+          </inscription>
+        </arc>
+        <!...>
+        (</page>)
+      </net>
+      <!...>
+    </pnml>
