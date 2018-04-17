@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f2972196-1853-40aa-92b1-22efa3b516df" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/br/icomp/ufam/util/Matrix.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/util/Matrix.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -346,17 +344,23 @@
       <option name="project" value="LOCAL" />
       <updated>1523935634750</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="4_commit&#10;&#10;Implementação das estruturas das matrizes de input e output da rede. Foram criados dois métodos de verificação de relação entre lugares e transições, um método para cada uma das duas matrizes.">
+      <created>1523992542861</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1523992542861</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="23" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13417052" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50231326" side_tool="true" weight="0.35994196" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3280116" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.3280116" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32919955" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4976867" weight="0.7880987" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -378,7 +382,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2_commit" />
     <MESSAGE value="3_commit&#10;&#10;Implementação das estruturas das matrizes de input e output da rede. Foram criados dois métodos de verificação de relação entre lugares e transições, um método para cada uma das duas matrizes." />
-    <option name="LAST_COMMIT_MESSAGE" value="3_commit&#10;&#10;Implementação das estruturas das matrizes de input e output da rede. Foram criados dois métodos de verificação de relação entre lugares e transições, um método para cada uma das duas matrizes." />
+    <MESSAGE value="4_commit&#10;&#10;Implementação das estruturas das matrizes de input e output da rede. Foram criados dois métodos de verificação de relação entre lugares e transições, um método para cada uma das duas matrizes." />
+    <option name="LAST_COMMIT_MESSAGE" value="4_commit&#10;&#10;Implementação das estruturas das matrizes de input e output da rede. Foram criados dois métodos de verificação de relação entre lugares e transições, um método para cada uma das duas matrizes." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
