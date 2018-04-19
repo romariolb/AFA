@@ -10,4 +10,5 @@ for net in nets:
     matrix = Matrix(net)
     matrix.setMatrixI()
     matrix.setMatrixO()
+    matrix.setMatrixD()
     print(matrix)

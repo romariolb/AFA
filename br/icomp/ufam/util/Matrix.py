@@ -11,6 +11,7 @@ class Matrix:
         self.colunas = len(pnet.listT)
         self.matrizI = []
         self.matrizO = []
+        self.matrixD = []
 
     def __str__(self):
         text = '--- Matriz de input:\n'
@@ -23,8 +24,12 @@ class Matrix:
         for linha in self.matrizO:
             text += str(linha) + '\n'
 
-        return text
+        text += '---Matriz D:\n'
 
+        for linha in self.matrixD:
+            text += str(linha) + '\n'
+
+        return text
 
     def hasArcI(self, i, j):
         """
@@ -83,3 +88,10 @@ class Matrix:
                     linha.append(0)
             self.matrizO.append(linha)
 
+    def setMatrixD(self):
+        for i in range(0, self.linhas):
+            linha = []
+            for j in range(0, self.colunas):
+                sub = self.matrizO[i][j] - self.matrizI[i][j]
+                linha.append(sub)
+            self.matrixD.append(linha)
