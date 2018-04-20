@@ -69,6 +69,11 @@ class Matrix:
         return False
 
     def setMatrixI(self):
+        """
+        Gera a matriz de input da rede.
+
+        :return:
+        """
         for place in self.pnet.listP:
             linha = []
             for transition in self.pnet.listT:
@@ -79,6 +84,11 @@ class Matrix:
             self.matrizI.append(linha)
 
     def setMatrixO(self):
+        """
+        Gera a matriz de output da rede.
+
+        :return:
+        """
         for place in self.pnet.listP:
             linha = []
             for transition in self.pnet.listT:
@@ -89,6 +99,11 @@ class Matrix:
             self.matrizO.append(linha)
 
     def setMatrixD(self):
+        """
+        Gera a matriz D. Resultante de Output - Input
+
+        :return:
+        """
         for i in range(0, self.linhas):
             linha = []
             for j in range(0, self.colunas):
