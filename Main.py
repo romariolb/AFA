@@ -3,10 +3,13 @@ from br.icomp.ufam.util.Matrix import Matrix
 
 # TESTE DE PARSER
 
-nets = ParsePetriNet().parse_pnml_file('Score_1_1.pnml')
+obj = ParsePetriNet()
+obj.parse_csv_file('Support/2017139440220.csv')
+nets = obj.parse_pnml_file('Support/Score_1_1.pnml')
+
+print(obj)
 
 for net in nets:
-    print(net)
     matrix = Matrix(net)
     matrix.setMatrixI()
     matrix.setMatrixO()

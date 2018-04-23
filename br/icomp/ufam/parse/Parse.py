@@ -5,6 +5,7 @@ Petri nets/PNML created with VipTool or MoPeBs.
 """
 
 import sys  # argv for test file path
+import csv
 import xml.etree.ElementTree as ET  # XML parser
 from br.icomp.ufam.petrinet.PNet import PNet
 from br.icomp.ufam.petrinet.PNetPlace import PNetPlace
@@ -31,6 +32,7 @@ class ParsePetriNet:
         self.transitions = {}  # Map of transitions. Key: transition id, Value: event
         self.places = {}  # Map of places. Key: place id, Value: place
         self.types = []  # List of data type from net.
+        self.mark = []  # List of initial marks
 
     def __str__(self):
         text = '--- Net:\nTypes:\n'
@@ -45,7 +47,10 @@ class ParsePetriNet:
         text += '\nArcos:\n'
         for edge in self.net.listA:
             text += str(edge) + '\n'
-        text += '---'
+        text += '\nMarcação Inicial\n['
+        for item in self.mark:
+            text += str(item) + ' '
+        text += ']\n---'
 
         return text
 
@@ -153,3 +158,11 @@ class ParsePetriNet:
 
         return nets
 
+    def parse_csv_file(self, file):
+        input_file = open(file)
+        reader = csv.reader(input_file, delimiter=';')
+
+        for linha in reader:
+            resposta = linha[8]
+            self.mark.append(resposta)
+        input_file.close()
