@@ -35,7 +35,6 @@ class ParsePetriNet:
         self.mark = []  # List of initial marks
 
     def __str__(self):
-
         text = '--- Net:\nTypes:\n'
         for mode in self.net.listTy:
             text += str(mode.label.text) + '\n'
@@ -54,48 +53,6 @@ class ParsePetriNet:
         text += ']\n---'
 
         return text
-
-    def parse_csv_file(self, file):
-        with open('Support/log-igorlucas-simulado2.CSV', 'r') as log:
-            reader = csv.reader(log)
-        for linha in reader:
-            """
-            Leitura dos componentes do .csv para atribuição aos objetos
-            """
-            ALUNO = linha[2]
-            TEMPO = linha[3]
-            foco = linha[6]
-            tmp = foco.split(':')
-            QUESTAO = str(tmp[0] + tmp[1])
-            DIFC = str(tmp[2])
-            RESPOSTA = QUESTAO + str(tmp[4])
-            tmp2 = tmp[3].split('-')
-            DISCIPLINA = str(tmp2[0])
-            TOPICO = str(tmp2[1])
-
-            """
-            criação dos objetos de lugares, transições e arcos
-            """
-
-            placeQ = PNetPlace(QUESTAO, QUESTAO, DISCIPLINA, TOPICO, DIFC, TEMPO)
-            placeR = PNetPlace(RESPOSTA, RESPOSTA, None, None, None, TEMPO)
-
-            """
-            Aqui precisa de uma rotina para contar quantas vezes eu estou passando
-            pelo mesmo lugar.
-            """
-
-            transition1, transition2 = PNetTransition()
-
-            
-
-
-
-
-
-
-
-
 
     def parse_pnml_file(self, file):
         """ This method parse all Petri nets of the given file.

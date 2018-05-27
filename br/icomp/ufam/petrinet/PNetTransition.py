@@ -1,15 +1,12 @@
-from br.icomp.ufam.petrinet.PNetNode import PNetNode
+import time  # timestamp for id generation
+from random import randint  # random number for id generation
 
 
 class PNetTransition:
 
-    def __init__(self, id, name, expGuard, code):
-        self.node = PNetNode(id, name)
-        self.expGuard = expGuard
-        #self.preBinding = preBinding
-        #self.var = var
-        self.code = code
+    def __init__(self):
+        self.id = (str(time.time())) + str(randint(0, 1000))
 
     def __str__(self):
-        return str(self.node.id) + '| ' + self.node.name + '| ' + str(self.expGuard) + '| ' + str(self.code)
+        return str(self.id)
 
