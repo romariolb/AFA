@@ -1,10 +1,13 @@
-from br.icomp.ufam.parse.Parse import ParsePetriNet
+import argparse
+import sys  # argv for test file path
 from br.icomp.ufam.util.Matrix import Matrix
+from br.icomp.ufam.parse.ParsePetriNet import ParsePetriNet
+
 
 # TESTE DE PARSER
-
+param = sys.argv[1]
 obj = ParsePetriNet()
-net = obj.parse_csv_file('Support/log-igorlucas-simulado2.CSV')
+net = obj.parse_csv_file(str(param))
 
 print(net)
 

@@ -13,8 +13,8 @@ class PNet:
         # self.arcs = dict(ID='', source='', target='', inscription='')
 
     '''
-    Os lugares ficam salvos numa lista com varios dicionários. Cada elemento da lista possui um dicionário
-    com os mesmos cabeçalhos, mas com valores diferentes. Futuramente, uma verificação deve ser feita para
+    Os lugares ficam salvos numa lista com varios dicionarios. Cada elemento da lista possui um dicionario
+    com os mesmos cabecalhos, mas com valores diferentes. Futuramente, uma verificacao deve ser feita para
     evitar dados repetidos.
     '''
 
@@ -26,8 +26,8 @@ class PNet:
         self.listP[place.node.id] = place
 
     '''
-    As transições ficam salvas numa lista com varios dicionários. Cada elemento da lista possui um dicionário
-    com os mesmos cabeçalhos, mas com valores diferentes. Futuramente, uma verificação deve ser feita para
+    As transicoes ficam salvas numa lista com varios dicionarios. Cada elemento da lista possui um dicionario
+    com os mesmos cabecalhos, mas com valores diferentes. Futuramente, uma verificacao deve ser feita para
     evitar dados repetidos.
     '''
 
@@ -39,8 +39,8 @@ class PNet:
         self.listT[transition.node.id] = transition
 
     '''
-    Os arcos ficam salvos numa lista com varios dicionários. Cada elemento da lista possui um dicionário
-    com os mesmos cabeçalhos, mas com valores diferentes. Futuramente, uma verificação deve ser feita para
+    Os arcos ficam salvos numa lista com varios dicionarios. Cada elemento da lista possui um dicionario
+    com os mesmos cabecalhos, mas com valores diferentes. Futuramente, uma verificacao deve ser feita para
     evitar dados repetidos.
     '''
 

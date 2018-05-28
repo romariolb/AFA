@@ -33,10 +33,10 @@ class Matrix:
 
     def hasArcI(self, i, j):
         """
-        Verifica relação de Input
+        Verifica relacao de Input
 
-        Verifica se existe uma ligação de incidência de um lugar
-        para uma transição.
+        Verifica se existe uma ligacao de incidencia de um lugar
+        para uma transicao.
 
         :param i: key
         :param j: key
@@ -51,9 +51,9 @@ class Matrix:
 
     def hasArcO(self, i, j):
         """
-        Verifica relação de Output
+        Verifica relacao de Output
 
-        Verifica se existe uma ligação de incidência de uma transição
+        Verifica se existe uma ligacao de incidencia de uma transicao
         para um lugar.
 
         :param i: int

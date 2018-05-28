@@ -1,10 +1,3 @@
-""" This program implements a parser and data structure for Petri net files.
-
-This program implements an XML parser and a python data structure for
-Petri nets/PNML created with VipTool or MoPeBs.
-"""
-
-import sys  # argv for test file path
 import csv
 from br.icomp.ufam.petrinet.PNet import PNet
 from br.icomp.ufam.petrinet.PNetPlace import PNetPlace
@@ -41,7 +34,7 @@ class ParsePetriNet:
         text += '\nArcos:\n'
         for edge in self.net.listA:
             text += str(edge) + '\n'
-        text += '\nMarcação Inicial\n'
+        text += '\nMarcacao Inicial\n'
 
         return text
 
@@ -65,8 +58,8 @@ class ParsePetriNet:
             t_max = t_max * 2
 
             """
-            Criação dos objetos de transição.
-            O numero total de transições é o dobro de linhas do arquivo
+            Criacao dos objetos de transicao.
+            O numero total de transicoes eh o dobro de linhas do arquivo
             """
             for t in range(1, t_max + 1):
                 transition1 = PNetTransition(t)
@@ -82,7 +75,7 @@ class ParsePetriNet:
 
             for linha in reader:
                 """
-                Leitura dos componentes do .csv para atribuição aos objetos
+                Leitura dos componentes do .csv para atribuicao aos objetos
                 """
                 self.aluno = linha[2]
                 TEMPO = linha[3]
@@ -96,11 +89,11 @@ class ParsePetriNet:
                 TOPICO = str(tmp2[1])
 
                 """
-                criação dos objetos de lugares
+                criacao dos objetos de lugares
                 
-                faz uma verificação se o lugar ja existe no map de lugares
+                faz uma verificacao se o lugar ja existe no map de lugares
                 se existir ele incrementa o contador do lugar com +1
-                senão, ele insere o lugar novo e inicia o contador com 1
+                senao, ele insere o lugar novo e inicia o contador com 1
                 """
 
                 placeQ = PNetPlace(QUESTAO, DISCIPLINA, TOPICO, DIFC, TEMPO)
@@ -120,7 +113,7 @@ class ParsePetriNet:
                     self.net.listP[placeR.node.id].count += 1
 
                 """
-                Criação dos objetos de Arcos.
+                Criacao dos objetos de Arcos.
                 """
 
                 arc1 = PNetArc(last, self.net.listP[placeQ.node.id], self.net.listP[placeQ.node.id].count, self.net)
