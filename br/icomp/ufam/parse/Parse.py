@@ -27,18 +27,13 @@ class ParsePetriNet:
     """
 
     def __init__(self):
+        self.aluno = None
         self.net = ''
-        self.edges = []  # List or arcs
-        self.transitions = {}  # Map of transitions. Key: transition id, Value: event
-        self.places = {}  # Map of places. Key: place id, Value: place
-        self.types = []  # List of data type from net.
-        self.mark = []  # List of initial marks
 
     def __str__(self):
 
         text = '--- Net:\nTypes:\n'
-        for mode in self.net.listTy:
-            text += str(mode.label.text) + '\n'
+
         text += '\nTransitions:\n'
         for transition in self.net.listT:
             text += str(transition) + '\n'
@@ -48,164 +43,105 @@ class ParsePetriNet:
         text += '\nArcos:\n'
         for edge in self.net.listA:
             text += str(edge) + '\n'
-        text += '\nMarcação Inicial\n['
-        for item in self.mark:
-            text += str(item) + ' '
-        text += ']\n---'
+        text += '\nMarcação Inicial\n'
 
         return text
 
     def parse_csv_file(self, file):
-        with open('Support/log-igorlucas-simulado2.CSV', 'r') as log:
-            reader = csv.reader(log)
-        for linha in reader:
-            """
-            Leitura dos componentes do .csv para atribuição aos objetos
-            """
-            ALUNO = linha[2]
-            TEMPO = linha[3]
-            foco = linha[6]
-            tmp = foco.split(':')
-            QUESTAO = str(tmp[0] + tmp[1])
-            DIFC = str(tmp[2])
-            RESPOSTA = QUESTAO + str(tmp[4])
-            tmp2 = tmp[3].split('-')
-            DISCIPLINA = str(tmp2[0])
-            TOPICO = str(tmp2[1])
+
+        self.net = PNet()
+
+        placeS = PNetPlace('S', None, None, None, None)
+        placeS.count += 1
+        self.net.addPlace(placeS)
+        placeSS = PNetPlace('SS', None, None, None, None)
+        placeSS.count += 1
+        self.net.addPlace(placeSS)
+
+        transition0 = PNetTransition(0)
+        self.net.addTransition(transition0)
+
+        arcS = PNetArc(self.net.listP[placeS.node.id], self.net.listT[transition0.node.id],
+                       self.net.listP[placeS.node.id].count, self.net)
+        self.net.addArc(arcS)
+
+        with open(file, 'r') as log:
+            reader = csv.reader(log, delimiter=';')
+
+            t_max = sum(1 for row in log)
+            t_max = t_max * 2
 
             """
-            criação dos objetos de lugares, transições e arcos
+            Criação dos objetos de transição.
+            O numero total de transições é o dobro de linhas do arquivo
             """
+            for t in range(1, t_max):
+                transition1 = PNetTransition(t)
+                self.net.addTransition(transition1)
 
-            placeQ = PNetPlace(QUESTAO, QUESTAO, DISCIPLINA, TOPICO, DIFC, TEMPO)
-            placeR = PNetPlace(RESPOSTA, RESPOSTA, None, None, None, TEMPO)
+            last = self.net.listT[transition0.node.id]
 
-            """
-            Aqui precisa de uma rotina para contar quantas vezes eu estou passando
-            pelo mesmo lugar.
-            """
+            for linha in reader:
+                """
+                Leitura dos componentes do .csv para atribuição aos objetos
+                """
+                self.aluno = linha[2]
+                TEMPO = linha[3]
+                foco = linha[6]
+                tmp = foco.split(':')
+                QUESTAO = str(tmp[0] + tmp[1])
+                DIFC = str(tmp[2])
+                RESPOSTA = QUESTAO + str(tmp[4])
+                tmp2 = tmp[3].split('-')
+                DISCIPLINA = str(tmp2[0])
+                TOPICO = str(tmp2[1])
 
-            transition1, transition2 = PNetTransition()
+                """
+                criação dos objetos de lugares
+                
+                faz uma verificação se o lugar ja existe no map de lugares
+                se existir ele incrementa o contador do lugar com +1
+                senão, ele insere o lugar novo e inicia o contador com 1
+                """
 
-            
+                placeQ = PNetPlace(QUESTAO, DISCIPLINA, TOPICO, DIFC, TEMPO)
 
+                if placeQ.node.id in self.net.listP:
+                    self.net.listP[placeQ.node.id].count += 1
+                else:
+                    self.net.addPlace(placeQ)
+                    self.net.listP[placeQ.node.id].count += 1
 
+                placeR = PNetPlace(RESPOSTA, None, None, None, TEMPO)
 
+                if placeR.node.id in self.net.listP:
+                    self.net.listP[placeR.node.id].count += 1
+                else:
+                    self.net.addPlace(placeR)
+                    self.net.listP[placeR.node.id].count += 1
 
+                """
+                Criação dos objetos de Arcos.
+                """
 
+                arc1 = PNetArc(last, self.net.listP[placeQ.node.id], self.net.listP[placeQ.node.id].count, self.net)
+                arc2 = PNetArc(self.net.listP[placeQ.node.id], self.net.listT[last.node.id + 1],
+                               self.net.listP[placeQ.node.id].count, self.net)
+                arc3 = PNetArc(self.net.listT[last.node.id + 1], self.net.listP[placeR.node.id],
+                               self.net.listP[placeR.node.id].count, self.net)
+                arc4 = PNetArc(self.net.listP[placeR.node.id], self.net.listT[last.node.id + 2],
+                               self.net.listP[placeR.node.id].count, self.net)
 
+                self.net.addArc(arc1)
+                self.net.addArc(arc2)
+                self.net.addArc(arc3)
+                self.net.addArc(arc4)
 
+                last = self.net.listT[last.node.id + 2]
 
+            arcSS = PNetArc(last, self.net.listP[placeSS.node.id], self.net.listP[placeSS.node.id].count, self.net)
+            self.net.addArc(arcSS)
 
-    def parse_pnml_file(self, file):
-        """ This method parse all Petri nets of the given file.
+            self.net.id = self.aluno
 
-        This method expects a path to a VipTool pnml file which
-        represent a Petri net (.pnml), parse all Petri nets
-        from the file and returns the Petri nets as list of PetriNet
-        objects.
-
-        XML format:
-        <pnml>
-          <net id="...">
-            (<page>)
-            <name>
-              <text>name of Petri net</text>
-            </name>
-            <transition id="...">
-              <name>
-                <text>label of transition</text>
-                <graphics>
-                  <offset x="0" y="0"/>
-                </graphics>
-              </name>
-              <graphics>
-                <position x="73" y="149"/>
-              </graphics>
-            </transition>
-            ...
-            <place id="...">
-              <name>
-                <text>label of transition</text>
-                <graphics>
-                  <offset x="0" y="0"/>
-                </graphics>
-              </name>
-              <graphics>
-                <position x="73" y="149"/>
-              </graphics>
-              <initialMarking>
-                <text>1</text>
-              </initialMarking>
-            </place>
-            ...
-            <arc id="..." source="id of source event" target="id of target event">
-              <inscription>
-                <text>1</text>
-              </inscription>
-            </arc>
-            ...
-            (</page>)
-          </net>
-          ...
-        </pnml>
-        """
-        tree = ET.parse(file)  # parse XML with ElementTree
-        root = tree.getroot()
-
-        nets = []  # list for parsed PetriNet objects
-
-        for net_node in root.iter('net'):
-            # create PetriNet object
-            self.net = PNet(net_node.get(id))
-            nets.append(self.net)
-            # net.name = net_node.find('./name/text').text
-
-            # and data types
-            for mode_type in net_node.iter('declaration'):
-                mode = PNetType()
-                mode.label = mode_type.find('./type/name')
-
-                self.net.addTypes(mode)
-
-            # and parse transitions
-            for transition_node in net_node.iter('transition'):
-                ID = transition_node.get('id')
-                LABEL = transition_node.find('./name/text').text
-                CODE = transition_node.find('./toolspecific/code/text').text
-                GUARD = transition_node.find('./guard/text').text
-
-                transition = PNetTransition(ID, LABEL, GUARD, CODE)
-                self.net.addTransition(transition)
-
-            # and parse places
-            for place_node in net_node.iter('place'):
-                ID = place_node.get('id')
-                LABEL = place_node.find('./name/text').text
-                TYPE = place_node.find('./type/text').text
-                MARKING = place_node.find('./initialMarking/text').text
-
-                place = PNetPlace(ID, LABEL, TYPE, MARKING)
-                self.net.addPlace(place)
-
-            # and arcs
-            for arc_node in net_node.iter('arc'):
-                ID = arc_node.get('id')
-                SOURCE = arc_node.get('source')
-                TARGET = arc_node.get('target')
-                INSCRIPTION = arc_node.find('./inscription/text').text
-                NET = self.net
-
-                edge = PNetArc(ID, SOURCE, TARGET, INSCRIPTION, NET)
-                self.net.addArc(edge)
-
-        return nets
-
-    def parse_csv_file(self, file):
-        input_file = open(file)
-        reader = csv.reader(input_file, delimiter=';')
-
-        for linha in reader:
-            resposta = linha[8]
-            self.mark.append(resposta)
-        input_file.close()
+        return self.net

@@ -1,11 +1,13 @@
+import time  # timestamp for id generation
+from random import randint  # random number for id generation
+
 class PNet:
 
-    def __init__(self, id):
-        self.id = id
-        self.listP = {}
-        self.listT = {}
-        self.listA = []
-        self.listTy = []
+    def __init__(self):
+        self.id = (str(time.time())) + str(randint(0, 1000))
+        self.listP = {}  # Map of places. Key: place id, Value: place
+        self.listT = {}  # Map of transitions. Key: transition id, Value: event
+        self.listA = []  # List or arcs
         # self.places = dict(ID='', name='', type='', initMarking='')
         # self.transitions = dict(ID='', name='', expGuard='', preBinding='', code='', var='')
         # self.arcs = dict(ID='', source='', target='', inscription='')
@@ -49,13 +51,9 @@ class PNet:
 
         self.listA.append(arc)
 
-    def addTypes(self, types):
-        self.listTy.append(types)
-
     def __str__(self):
         text = '--- Net:\nTypes:\n'
-        for mode in self.listTy:
-            text += str(mode.label.text) + '\n'
+
         text += '\nTransitions:\n'
         for transition in self.listT:
             text += str(transition) + '\n'

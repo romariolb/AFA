@@ -11,17 +11,17 @@ class PNetArc:
         self.net = net
 
     def find_source(self):
-        if self.source in self.net.listT:
-            return self.net.listT[self.source]
+        if self.source.node.id in self.net.listT:
+            return self.net.listT[self.source.node.id]
         else:
-            return self.net.listP[self.source]
+            return self.net.listP[self.source.node.id]
 
     def find_target(self):
-        if self.target in self.net.listT:
-            return self.net.listT[self.target]
+        if self.target.node.id in self.net.listT:
+            return self.net.listT[self.target.node.id]
         else:
-            return self.net.listP[self.target]
+            return self.net.listP[self.target.node.id]
 
     def __str__(self):
-        return str(self.id) + '| ' + str(self.find_source().node.name) + "-->" + str(self.find_target().node.name) + '| '\
-               + str(self.inscription)
+        return str(self.id) + '| ' + str(self.find_source().node.name) + "-->" + str(self.find_target().node.name) + \
+               '| ' + str(self.inscription)

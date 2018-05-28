@@ -1,14 +1,14 @@
 class Matrix:
 
-    def __init__(self, pnet):
+    def __init__(self, net):
         """
 
         :type pnet: PNet
         """
-        self.pnet = pnet
-        self.arcs = self.pnet.listA
-        self.linhas = len(pnet.listP)
-        self.colunas = len(pnet.listT)
+        self.net = net
+        self.arcs = self.net.listA
+        self.linhas = len(net.listP)
+        self.colunas = len(net.listT)
         self.matrizI = []
         self.matrizO = []
         self.matrixD = []
@@ -42,8 +42,8 @@ class Matrix:
         :param j: key
         :return: true, false
         """
-        place = self.pnet.listP.get(i)
-        transition = self.pnet.listT.get(j)
+        place = self.net.listP[i]
+        transition = self.net.listT[j]
         for arc in self.arcs:
             if place.node.id in arc.source and transition.node.id in arc.target:
                 return True
@@ -61,8 +61,8 @@ class Matrix:
         :return: true, false
         """
 
-        place = self.pnet.listP.get(i)
-        transition = self.pnet.listT.get(j)
+        place = self.net.listP.get(i)
+        transition = self.net.listT.get(j)
         for arc in self.arcs:
             if transition.node.id in arc.source and place.node.id in arc.target:
                 return True
@@ -74,9 +74,9 @@ class Matrix:
 
         :return:
         """
-        for place in self.pnet.listP:
+        for place in self.net.listP.keys():
             linha = []
-            for transition in self.pnet.listT:
+            for transition in self.net.listT.keys():
                 if self.hasArcI(place, transition) is True:
                     linha.append(1)
                 else:
@@ -89,10 +89,10 @@ class Matrix:
 
         :return:
         """
-        for place in self.pnet.listP:
+        for place in self.net.listP:
             linha = []
-            for transition in self.pnet.listT:
-                if self.hasArcO(place, transition) is True:
+            for transition in self.net.listT:
+                if self.hasArcO(place.values(), transition.values()) is True:
                     linha.append(1)
                 else:
                     linha.append(0)
