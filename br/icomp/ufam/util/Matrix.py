@@ -7,8 +7,8 @@ class Matrix:
         """
         self.net = net
         self.arcs = self.net.listA
-        self.linhas = len(net.listP)
-        self.colunas = len(net.listT)
+        self.linhas = len(self.net.listT)
+        self.colunas = len(self.net.listP)
         self.matrizI = []
         self.matrizO = []
         self.matrixD = []
@@ -42,10 +42,10 @@ class Matrix:
         :param j: key
         :return: true, false
         """
-        place = self.net.listP[i]
-        transition = self.net.listT[j]
+        transition = i.node.id
+        place = j.node.id
         for arc in self.arcs:
-            if place.node.id in arc.source and transition.node.id in arc.target:
+            if place == arc.source.node.id and transition == arc.target.node.id:
                 return True
         return False
 
@@ -61,10 +61,10 @@ class Matrix:
         :return: true, false
         """
 
-        place = self.net.listP.get(i)
-        transition = self.net.listT.get(j)
+        transition = i.node.id
+        place = j.node.id
         for arc in self.arcs:
-            if transition.node.id in arc.source and place.node.id in arc.target:
+            if transition == arc.source.node.id and place == arc.target.node.id:
                 return True
         return False
 
@@ -74,11 +74,15 @@ class Matrix:
 
         :return:
         """
-        for place in self.net.listP.keys():
+
+        valuesP = self.net.listP.values()
+        valuesT = self.net.listT.values()
+
+        for transition in valuesT:
             linha = []
-            for transition in self.net.listT.keys():
-                if self.hasArcI(place, transition) is True:
-                    linha.append(1)
+            for place in valuesP:
+                if self.hasArcI(transition, place) is True:
+                    linha.append(place.count)
                 else:
                     linha.append(0)
             self.matrizI.append(linha)
@@ -89,11 +93,15 @@ class Matrix:
 
         :return:
         """
-        for place in self.net.listP:
+
+        valuesP = self.net.listP.values()
+        valuesT = self.net.listT.values()
+
+        for transition in valuesT:
             linha = []
-            for transition in self.net.listT:
-                if self.hasArcO(place.values(), transition.values()) is True:
-                    linha.append(1)
+            for place in valuesP:
+                if self.hasArcO(transition, place) is True:
+                    linha.append(place.count)
                 else:
                     linha.append(0)
             self.matrizO.append(linha)

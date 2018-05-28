@@ -1,9 +1,10 @@
 import time  # timestamp for id generation
 from random import randint  # random number for id generation
 
+
 class PNetArc:
 
-    def __init__(self, source, target,  inscription, net):
+    def __init__(self, source, target, inscription, net):
         self.id = (str(time.time())) + str(randint(0, 1000))
         self.source = source
         self.target = target

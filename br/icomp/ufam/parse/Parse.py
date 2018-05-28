@@ -52,9 +52,6 @@ class ParsePetriNet:
         placeS = PNetPlace('S', None, None, None, None)
         placeS.count += 1
         self.net.addPlace(placeS)
-        placeSS = PNetPlace('SS', None, None, None, None)
-        placeSS.count += 1
-        self.net.addPlace(placeSS)
 
         transition0 = PNetTransition(0)
         self.net.addTransition(transition0)
@@ -140,6 +137,10 @@ class ParsePetriNet:
                 self.net.addArc(arc4)
 
                 last = self.net.listT[last.node.id + 2]
+
+            placeSS = PNetPlace('SS', None, None, None, None)
+            placeSS.count += 1
+            self.net.addPlace(placeSS)
 
             arcSS = PNetArc(last, self.net.listP[placeSS.node.id], self.net.listP[placeSS.node.id].count,
                             self.net)
