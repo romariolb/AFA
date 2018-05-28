@@ -5,13 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Support/log-igorlucas-simulado2.CSV" beforeDir="false" afterPath="$PROJECT_DIR$/Support/log-igorlucas-simulado2.CSV" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/br/icomp/ufam/parse/Parse.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/parse/Parse.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/br/icomp/ufam/petrinet/PNet.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/petrinet/PNet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetArc.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetArc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetNode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetPlace.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetPlace.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetTransition.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetTransition.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/br/icomp/ufam/util/Matrix.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/util/Matrix.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,14 +16,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.45419848">
+    <splitter split-orientation="horizontal" split-proportion="0.57709926">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Main.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="23">
-                  <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+                <state relative-caret-position="255">
+                  <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
                   <folding>
                     <element signature="e#0#51#0" expanded="true" />
                   </folding>
@@ -48,8 +43,8 @@
           <file leaf-file-name="log-igorlucas-simulado2.CSV" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Support/log-igorlucas-simulado2.CSV">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="62" selection-start-column="62" selection-end-column="62" />
+                <state relative-caret-position="562">
+                  <caret line="56" column="88" selection-start-line="56" selection-start-column="88" selection-end-line="56" selection-end-column="88" />
                 </state>
               </provider>
             </entry>
@@ -58,11 +53,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Parse.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Parse.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/br/icomp/ufam/parse/Parse.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="499">
-                  <caret line="83" column="32" lean-forward="true" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
+                <state relative-caret-position="-707">
+                  <caret line="73" column="41" lean-forward="true" selection-start-line="73" selection-start-column="41" selection-end-line="73" selection-end-column="41" />
                   <folding>
                     <element signature="e#0#199#1" />
                     <element signature="e#201#238#0" expanded="true" />
@@ -83,7 +78,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="PNetArc.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="PNetArc.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetArc.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="323">
@@ -163,10 +158,11 @@
         <option value="$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetPlace.py" />
         <option value="$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetTransition.py" />
         <option value="$PROJECT_DIR$/br/icomp/ufam/petrinet/PNet.py" />
-        <option value="$PROJECT_DIR$/Main.py" />
         <option value="$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetArc.py" />
-        <option value="$PROJECT_DIR$/br/icomp/ufam/parse/Parse.py" />
         <option value="$PROJECT_DIR$/br/icomp/ufam/util/Matrix.py" />
+        <option value="$PROJECT_DIR$/Main.py" />
+        <option value="$PROJECT_DIR$/Support/log-igorlucas-simulado2.CSV" />
+        <option value="$PROJECT_DIR$/br/icomp/ufam/parse/Parse.py" />
       </list>
     </option>
   </component>
@@ -439,7 +435,14 @@
       <option name="project" value="LOCAL" />
       <updated>1527432019453</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="8_commit&#10;&#10;estrutura da rede pronta.&#10;erro ao montar a matriz de incidência&#10;  File &quot;C:\Users\romar\PycharmProjects\AFA\br\icomp\ufam\util\Matrix.py&quot;, line 48, in hasArcI&#10;    if place.node.id in arc.source and transition.node.id in arc.target:&#10;TypeError: argument of type 'PNetPlace' is not iterable">
+      <created>1527521448387</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1527521448387</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -451,7 +454,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50165236" side_tool="true" weight="0.3280116" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49834764" weight="0.3280116" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32919955" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4976867" weight="0.82728595" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4976867" weight="0.9201742" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3280116" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -521,7 +524,8 @@
     <MESSAGE value="5_commit&#10;&#10;Implementação das estruturas das matrizes de input e output da rede. Foram criados dois métodos de verificação de relação entre lugares e transições, um método para cada uma das duas matrizes. Acrescentado a criação da matriz D, usada para executar a rede. Acrescentado alguns comentários." />
     <MESSAGE value="6_commit&#10;&#10;def de parse de arquivo .csv para construção da marcação inicial para Score." />
     <MESSAGE value="7_commit&#10;&#10;mudança completa de arquitetura da rede. agora ela não modela uma métrica mas sim o omportamento de um aluno.&#10;Começo da mudança de estrutura do codigo, para geração de matrizes." />
-    <option name="LAST_COMMIT_MESSAGE" value="7_commit&#10;&#10;mudança completa de arquitetura da rede. agora ela não modela uma métrica mas sim o omportamento de um aluno.&#10;Começo da mudança de estrutura do codigo, para geração de matrizes." />
+    <MESSAGE value="8_commit&#10;&#10;estrutura da rede pronta.&#10;erro ao montar a matriz de incidência&#10;  File &quot;C:\Users\romar\PycharmProjects\AFA\br\icomp\ufam\util\Matrix.py&quot;, line 48, in hasArcI&#10;    if place.node.id in arc.source and transition.node.id in arc.target:&#10;TypeError: argument of type 'PNetPlace' is not iterable" />
+    <option name="LAST_COMMIT_MESSAGE" value="8_commit&#10;&#10;estrutura da rede pronta.&#10;erro ao montar a matriz de incidência&#10;  File &quot;C:\Users\romar\PycharmProjects\AFA\br\icomp\ufam\util\Matrix.py&quot;, line 48, in hasArcI&#10;    if place.node.id in arc.source and transition.node.id in arc.target:&#10;TypeError: argument of type 'PNetPlace' is not iterable" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -805,13 +809,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Support/log-igorlucas-simulado2.CSV">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="62" selection-start-column="62" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/br/icomp/ufam/parse/ParsePlaces.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -849,17 +846,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/parse/Parse.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="83" column="32" lean-forward="true" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#199#1" />
-            <element signature="e#201#238#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/br/icomp/ufam/petrinet/PNet.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -880,10 +866,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Support/log-igorlucas-simulado2.CSV">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="56" column="88" selection-start-line="56" selection-start-column="88" selection-end-line="56" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/parse/Parse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-707">
+          <caret line="73" column="41" lean-forward="true" selection-start-line="73" selection-start-column="41" selection-end-line="73" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#199#1" />
+            <element signature="e#201#238#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="255">
+          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>

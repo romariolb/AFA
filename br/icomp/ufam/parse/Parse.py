@@ -6,12 +6,10 @@ Petri nets/PNML created with VipTool or MoPeBs.
 
 import sys  # argv for test file path
 import csv
-import xml.etree.ElementTree as ET  # XML parser
 from br.icomp.ufam.petrinet.PNet import PNet
 from br.icomp.ufam.petrinet.PNetPlace import PNetPlace
 from br.icomp.ufam.petrinet.PNetTransition import PNetTransition
 from br.icomp.ufam.petrinet.PNetArc import PNetArc
-from br.icomp.ufam.petrinet.PNetType import PNetType
 
 
 class ParsePetriNet:
@@ -66,8 +64,6 @@ class ParsePetriNet:
         self.net.addArc(arcS)
 
         with open(file, 'r') as log:
-            reader = csv.reader(log, delimiter=';')
-
             t_max = sum(1 for row in log)
             t_max = t_max * 2
 
@@ -75,11 +71,17 @@ class ParsePetriNet:
             Criação dos objetos de transição.
             O numero total de transições é o dobro de linhas do arquivo
             """
-            for t in range(1, t_max):
+            for t in range(1, t_max + 1):
                 transition1 = PNetTransition(t)
                 self.net.addTransition(transition1)
 
+        log.close()
+
+        with open(file, 'r') as log:
+
             last = self.net.listT[transition0.node.id]
+
+            reader = csv.reader(log, delimiter=';')
 
             for linha in reader:
                 """
@@ -139,9 +141,12 @@ class ParsePetriNet:
 
                 last = self.net.listT[last.node.id + 2]
 
-            arcSS = PNetArc(last, self.net.listP[placeSS.node.id], self.net.listP[placeSS.node.id].count, self.net)
+            arcSS = PNetArc(last, self.net.listP[placeSS.node.id], self.net.listP[placeSS.node.id].count,
+                            self.net)
             self.net.addArc(arcSS)
 
             self.net.id = self.aluno
+
+        log.close()
 
         return self.net

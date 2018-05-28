@@ -8,8 +8,9 @@ net = obj.parse_csv_file('Support/log-igorlucas-simulado2.CSV')
 
 print(net)
 
-matrix = Matrix(net)
+"""matrix = Matrix(net)
 matrix.setMatrixI()
 matrix.setMatrixO()
 matrix.setMatrixD()
 print(matrix)
+"""
