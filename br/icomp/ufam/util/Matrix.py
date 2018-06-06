@@ -38,14 +38,14 @@ class Matrix:
         Verifica se existe uma ligacao de incidencia de um lugar
         para uma transicao.
 
-        :param i: key
-        :param j: key
+        :param i: list[key, obj]
+        :param j: list[key, obj]
         :return: true, false
         """
-        transition = i.id
-        place = j[0]
+        transition = i
+        place = j
         for arc in self.net.listA:
-            if place == arc.source.id and transition == arc.target.id:
+            if place == arc.source and transition == arc.target:
                 return True
         return False
 
@@ -61,10 +61,10 @@ class Matrix:
         :return: true, false
         """
 
-        transition = i.id
-        place = j[0]
+        transition = i
+        place = j
         for arc in self.net.listA:
-            if transition == arc.source.id and place == arc.target.id:
+            if transition == arc.source and place == arc.target:
                 return True
         return False
 
@@ -76,13 +76,13 @@ class Matrix:
         """
 
         valuesP = self.net.listP
-        valuesT = self.net.listT.values()
+        valuesT = self.net.listT
 
         for transition in valuesT:
             linha = []
             for place in valuesP:
                 if self.hasArcI(transition, place) is True:
-                    linha.append(place.count)
+                    linha.append(place[1].count)
                 else:
                     linha.append(0)
             self.matrizI.append(linha)
@@ -95,13 +95,13 @@ class Matrix:
         """
 
         valuesP = self.net.listP
-        valuesT = self.net.listT.values()
+        valuesT = self.net.listT
 
         for transition in valuesT:
             linha = []
             for place in valuesP:
                 if self.hasArcO(transition, place) is True:
-                    linha.append(place.count)
+                    linha.append(place[1].count)
                 else:
                     linha.append(0)
             self.matrizO.append(linha)

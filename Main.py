@@ -10,8 +10,8 @@ net = ParsePetriNet().parse_csv_file(str(param))
 
 print(net)
 
-"""matrix = Matrix(net)
+matrix = Matrix(net)
 matrix.setMatrixI()
 matrix.setMatrixO()
 matrix.setMatrixD()
-print(matrix)"""
+print(matrix)
