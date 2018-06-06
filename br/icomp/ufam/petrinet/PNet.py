@@ -64,10 +64,10 @@ class PNet:
         text += str(self.id) + '\n'
         text += '\nTransitions:\n'
         for transition in self.listT:
-            text += str(transition) + '\n'
+            text += str(transition[1]) + '\n'
         text += '\nPlaces:\n'
         for place in self.listP:
-            text += str(place[0]) + '\n'
+            text += str(place[0]) + ' ' + str(place[1].count) + '\n'
         text += '\nArcos:\n'
         for edge in self.listA:
             text += str(edge) + '\n'

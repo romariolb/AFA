@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f2972196-1853-40aa-92b1-22efa3b516df" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/br/icomp/ufam/parse/ParsePetriNet.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/parse/ParsePetriNet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/br/icomp/ufam/petrinet/PNet.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/petrinet/PNet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetArc.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetArc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetPlace.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetPlace.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetTransition.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetTransition.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/br/icomp/ufam/util/Matrix.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/util/Matrix.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/pip-selfcheck.json" beforeDir="false" afterPath="$PROJECT_DIR$/venv/pip-selfcheck.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,7 +17,7 @@
     <splitter split-orientation="horizontal" split-proportion="0.35038167">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Main.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Main.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="187">
@@ -35,10 +29,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="log-igorlucas-simulado2.CSV" pinned="false" current-in-tab="false">
+          <file leaf-file-name="log-igorlucas-simulado2.CSV" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Support/log-igorlucas-simulado2.CSV">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="562">
+                <state relative-caret-position="886">
                   <caret line="56" column="88" selection-start-line="56" selection-start-column="88" selection-end-line="56" selection-end-column="88" />
                 </state>
               </provider>
@@ -48,11 +42,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="ParsePetriNet.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="ParsePetriNet.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/br/icomp/ufam/parse/ParsePetriNet.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="607">
-                  <caret line="185" lean-forward="true" selection-start-line="185" selection-end-line="185" />
+                <state relative-caret-position="-583">
+                  <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
                 </state>
               </provider>
             </entry>
@@ -81,11 +75,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="PNet.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="PNet.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/br/icomp/ufam/petrinet/PNet.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="607">
-                  <caret line="68" column="20" lean-forward="true" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
+                <state relative-caret-position="369">
+                  <caret line="66" column="36" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
                   <folding>
                     <element signature="e#0#42#0" expanded="true" />
                   </folding>
@@ -459,7 +453,14 @@
       <option name="project" value="LOCAL" />
       <updated>1527534642724</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="12_commit&#10;&#10;estrutura da rede pronta.&#10;Rede de petri sendo gerada e igual ao modelo gráfico.&#10;Matriz de incidência pausada.&#10;entrada de arquivo de log por linha de comando.&#10;Demora excessiva para gerar lugares e em lista! Corrigir. Está sendo realizado por um laço for.">
+      <created>1528302617777</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1528302617777</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -555,7 +556,8 @@
     <MESSAGE value="9_commit&#10;&#10;estrutura da rede pronta.&#10;Rede de petri sendo gerada e igual ao modelo gráfico.&#10;erro ao montar a matriz de incidência&#10;  File &quot;C:\Users\romar\PycharmProjects\AFA\br\icomp\ufam\util\Matrix.py&quot;, line 48, in hasArcI&#10;    if place.node.id in arc.source and transition.node.id in arc.target:&#10;TypeError: argument of type 'PNetPlace' is not iterable" />
     <MESSAGE value="10_commit&#10;&#10;estrutura da rede pronta.&#10;Rede de petri sendo gerada e igual ao modelo gráfico.&#10;Matriz de incidência gerada." />
     <MESSAGE value="11_commit&#10;&#10;estrutura da rede pronta.&#10;Rede de petri sendo gerada e igual ao modelo gráfico.&#10;Matriz de incidência gerada.&#10;entrada de arquivo de log por linha de comando." />
-    <option name="LAST_COMMIT_MESSAGE" value="11_commit&#10;&#10;estrutura da rede pronta.&#10;Rede de petri sendo gerada e igual ao modelo gráfico.&#10;Matriz de incidência gerada.&#10;entrada de arquivo de log por linha de comando." />
+    <MESSAGE value="12_commit&#10;&#10;estrutura da rede pronta.&#10;Rede de petri sendo gerada e igual ao modelo gráfico.&#10;Matriz de incidência pausada.&#10;entrada de arquivo de log por linha de comando.&#10;Demora excessiva para gerar lugares e em lista! Corrigir. Está sendo realizado por um laço for." />
+    <option name="LAST_COMMIT_MESSAGE" value="12_commit&#10;&#10;estrutura da rede pronta.&#10;Rede de petri sendo gerada e igual ao modelo gráfico.&#10;Matriz de incidência pausada.&#10;entrada de arquivo de log por linha de comando.&#10;Demora excessiva para gerar lugares e em lista! Corrigir. Está sendo realizado por um laço for." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -721,44 +723,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetType.py" />
-    <entry file="file://$PROJECT_DIR$/Support/log-igorlucas-simulado2.CSV">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="56" column="88" selection-start-line="56" selection-start-column="88" selection-end-line="56" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetNode.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetTransition.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="61" lean-forward="true" selection-end-line="1" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetArc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="36" column="41" lean-forward="true" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetPlace.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
@@ -782,20 +750,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/parse/ParsePetriNet.py">
+    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetArc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="607">
-          <caret line="185" lean-forward="true" selection-start-line="185" selection-end-line="185" />
+        <state relative-caret-position="525">
+          <caret line="36" column="41" lean-forward="true" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetPlace.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetTransition.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="61" lean-forward="true" selection-end-line="1" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/br/icomp/ufam/petrinet/PNet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="607">
-          <caret line="68" column="20" lean-forward="true" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
+        <state relative-caret-position="369">
+          <caret line="66" column="36" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/parse/ParsePetriNet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-583">
+          <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Support/log-igorlucas-simulado2.CSV">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="886">
+          <caret line="56" column="88" selection-start-line="56" selection-start-column="88" selection-end-line="56" selection-end-column="88" />
         </state>
       </provider>
     </entry>
