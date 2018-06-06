@@ -1,12 +1,15 @@
 import time  # timestamp for id generation
 from random import randint  # random number for id generation
+from collections import OrderedDict
+from array import array
+
 
 class PNet:
 
     def __init__(self):
         self.id = (str(time.time())) + str(randint(0, 1000))
-        self.listP = {}  # Map of places. Key: place id, Value: place
-        self.listT = {}  # Map of transitions. Key: transition id, Value: event
+        self.listP = []  # List of places. Tuple: place id, Value: place
+        self.listT = []  # List of transitions. Tuple: transition id, Value: event
         self.listA = []  # List or arcs
         # self.places = dict(ID='', name='', type='', initMarking='')
         # self.transitions = dict(ID='', name='', expGuard='', preBinding='', code='', var='')
@@ -22,8 +25,8 @@ class PNet:
         """
         :type place: PNetPlace
         """
-
-        self.listP[place.node.id] = place
+        #print('+p')
+        self.listP.append(place)
 
     '''
     As transicoes ficam salvas numa lista com varios dicionarios. Cada elemento da lista possui um dicionario
@@ -35,8 +38,8 @@ class PNet:
         """
         :type transition: PNetTransition
         """
-
-        self.listT[transition.node.id] = transition
+        #print('+t')
+        self.listT.append(transition)
 
     '''
     Os arcos ficam salvos numa lista com varios dicionarios. Cada elemento da lista possui um dicionario
@@ -48,18 +51,23 @@ class PNet:
         """
         :type arc: PNetArc
         """
-
+        #print('+a')
         self.listA.append(arc)
 
-    def __str__(self):
-        text = '--- Net:\nTypes:\n'
+    """def orderedMaps(self):
+        self.listP = OrderedDict(sorted(self.listP.items(), key=lambda t: re.findall(r'\d+', t[0])))
+        self.listT = OrderedDict(sorted(self.listT.items(), key=lambda t: t[0]))
+    """
 
+    def __str__(self):
+        text = '--- Net:'
+        text += str(self.id) + '\n'
         text += '\nTransitions:\n'
         for transition in self.listT:
             text += str(transition) + '\n'
         text += '\nPlaces:\n'
         for place in self.listP:
-            text += str(place) + '\n'
+            text += str(place[0]) + '\n'
         text += '\nArcos:\n'
         for edge in self.listA:
             text += str(edge) + '\n'

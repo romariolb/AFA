@@ -6,13 +6,12 @@ from br.icomp.ufam.parse.ParsePetriNet import ParsePetriNet
 
 # TESTE DE PARSER
 param = sys.argv[1]
-obj = ParsePetriNet()
-net = obj.parse_csv_file(str(param))
+net = ParsePetriNet().parse_csv_file(str(param))
 
 print(net)
 
-matrix = Matrix(net)
+"""matrix = Matrix(net)
 matrix.setMatrixI()
 matrix.setMatrixO()
 matrix.setMatrixD()
-print(matrix)
+print(matrix)"""

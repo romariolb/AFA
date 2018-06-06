@@ -5,6 +5,12 @@ from random import randint  # random number for id generation
 class PNetArc:
 
     def __init__(self, source, target, inscription, net):
+        """
+        :param source: tuple
+        :param target: tuple
+        :param inscription: int
+        :param net: object
+        """
         self.id = (str(time.time())) + str(randint(0, 1000))
         self.source = source
         self.target = target
@@ -12,17 +18,21 @@ class PNetArc:
         self.net = net
 
     def find_source(self):
-        if self.source.node.id in self.net.listT:
-            return self.net.listT[self.source.node.id]
+        if self.source in self.net.listT:
+            index = self.net.listT.index(self.source)
+            return self.net.listT[index][1]
         else:
-            return self.net.listP[self.source.node.id]
+            index = self.net.listP.index(self.source)
+            return self.net.listP[index][1]
 
     def find_target(self):
-        if self.target.node.id in self.net.listT:
-            return self.net.listT[self.target.node.id]
+        if self.target in self.net.listT:
+            index = self.net.listT.index(self.target)
+            return self.net.listT[index][1]
         else:
-            return self.net.listP[self.target.node.id]
+            index = self.net.listP.index(self.target)
+            return self.net.listP[index][1]
 
     def __str__(self):
-        return str(self.id) + '| ' + str(self.find_source().node.name) + "-->" + str(self.find_target().node.name) + \
+        return str(self.id) + '| ' + str(self.find_source().name) + "-->" + str(self.find_target().name) + \
                '| ' + str(self.inscription)

@@ -6,8 +6,10 @@ from br.icomp.ufam.petrinet.PNetNode import PNetNode
 class PNetTransition:
 
     def __init__(self, ID):
-        self.node = PNetNode(ID, 'T' + str(ID))
+        # self.node = PNetNode(ID, 'T' + str(ID))
+        self.id = ID
+        self.name = 'T' + str(ID)
 
     def __str__(self):
-        return str(self.node.name)
+        return str(self.name)
 

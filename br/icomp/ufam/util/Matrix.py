@@ -6,9 +6,9 @@ class Matrix:
         :type pnet: PNet
         """
         self.net = net
-        self.arcs = self.net.listA
-        self.linhas = len(self.net.listT)
-        self.colunas = len(self.net.listP)
+        #self.arcs = self.net.listA
+        self.linhas = len(net.listT)
+        self.colunas = len(net.listP)
         self.matrizI = []
         self.matrizO = []
         self.matrixD = []
@@ -42,10 +42,10 @@ class Matrix:
         :param j: key
         :return: true, false
         """
-        transition = i.node.id
-        place = j.node.id
-        for arc in self.arcs:
-            if place == arc.source.node.id and transition == arc.target.node.id:
+        transition = i.id
+        place = j[0]
+        for arc in self.net.listA:
+            if place == arc.source.id and transition == arc.target.id:
                 return True
         return False
 
@@ -61,10 +61,10 @@ class Matrix:
         :return: true, false
         """
 
-        transition = i.node.id
-        place = j.node.id
-        for arc in self.arcs:
-            if transition == arc.source.node.id and place == arc.target.node.id:
+        transition = i.id
+        place = j[0]
+        for arc in self.net.listA:
+            if transition == arc.source.id and place == arc.target.id:
                 return True
         return False
 
@@ -75,7 +75,7 @@ class Matrix:
         :return:
         """
 
-        valuesP = self.net.listP.values()
+        valuesP = self.net.listP
         valuesT = self.net.listT.values()
 
         for transition in valuesT:
@@ -94,7 +94,7 @@ class Matrix:
         :return:
         """
 
-        valuesP = self.net.listP.values()
+        valuesP = self.net.listP
         valuesT = self.net.listT.values()
 
         for transition in valuesT:
