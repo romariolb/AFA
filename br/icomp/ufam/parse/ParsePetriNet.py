@@ -5,6 +5,40 @@ from br.icomp.ufam.petrinet.PNetTransition import PNetTransition
 from br.icomp.ufam.petrinet.PNetArc import PNetArc
 
 
+def hasIn_listP(pair, net):
+    """
+
+    :param pair: list
+    :return: tupla: list || 0
+    """
+    for item in net.listP:
+        # print(pair[0] + ' ' + item[0])
+        if pair[0] == item[0]:
+            # print('igual')
+            i = net.listP.index(item)
+            net.listP[i][1].count += 1
+            pair = item
+            return pair
+        else:
+            v = 0
+    return 0
+
+
+def hasIn_gabList(pair, answers):
+    for item in answers:
+        if pair[0] == item[0]:
+            return 1
+    return 0
+
+
+def return_index(strid, net):
+    for item in net.listP:
+        if strid == item[0]:
+            indice = net.listP.index(item)
+            return indice
+    return 0
+
+
 class ParsePetriNet:
     """ This class represents a Petri net.
 
@@ -18,9 +52,9 @@ class ParsePetriNet:
     """
 
     def __init__(self):
-        self.aluno = None
+        self.student = None
         self.net = PNet()
-        #print('criou obj NET {}'.format(self.net))
+        # print('criou obj NET {}'.format(self.net))
 
     def __str__(self):
 
@@ -39,49 +73,42 @@ class ParsePetriNet:
 
         return text
 
-    def hasIn_listP(self, tupla):
-        """
+    def parse_csv_file(self, file, answers_list):
 
-        :param tupla: list
-        :return: tupla: list || 0
-        """
-        for item in self.net.listP:
-            # print(tupla[0] + ' ' + item[0])
-            if tupla[0] == item[0]:
-                #print('igual')
-                i = self.net.listP.index(item)
-                self.net.listP[i][1].count += 1
-                tupla = item
-                return tupla
-            else:
-                v = 0
-        return 0
+        answers = answers_list
 
-    def parse_csv_file(self, file):
-        #print('entrou no metodo parse_csv')
+        # print('entrou no metodo parse_csv')
 
-        #self.net = PNet()
+        # self.net = PNet()
 
-        #print('instaciou obj NET')
+        # print('instaciou obj NET')
+
+        for item in answers:
+            indice = answers.index(item) + 1
+            Nome = 'Q' + str(indice) + 'V'
+            p = PNetPlace(Nome, None, None, None, None)
+            t = [Nome, p]
+
+            self.net.addPlace(t)
 
         placeS = PNetPlace('S', None, None, None, None)
         placeS.count += 1
-        tuplaS = ['S', placeS]
-        self.net.addPlace(tuplaS)
+        pairS = ['S', placeS]
+        self.net.addPlace(pairS)
 
-        #print('criou o 1 lugar S')
+        # print('criou o 1 lugar S')
 
         transition0 = PNetTransition(0)
-        tupla0 = [0, transition0]
-        self.net.addTransition(tupla0)
+        pair0 = [0, transition0]
+        self.net.addTransition(pair0)
 
-        #print('criou a primeira transicao')
+        # print('criou a primeira transicao')
 
-        arcS = PNetArc(tuplaS, tupla0,
-                       tuplaS[1].count, self.net)
+        arcS = PNetArc(pairS, pair0,
+                       pairS[1].count, self.net)
         self.net.addArc(arcS)
 
-        #print('criou o 1 arco')
+        # print('criou o 1 arco')
 
         with open(file, 'r') as log:
             t_max = sum(1 for row in log)
@@ -94,7 +121,7 @@ class ParsePetriNet:
             for t in range(1, t_max + 1):
                 transition1 = [t, PNetTransition(t)]
                 self.net.addTransition(transition1)
-            #print('criou as transicoes')
+            # print('criou as transicoes')
 
         log.close()
 
@@ -108,13 +135,13 @@ class ParsePetriNet:
                 """
                 Leitura dos componentes do .csv para atribuicao aos objetos
                 """
-                self.aluno = linha[2]
+                self.student = linha[2]
                 TEMPO = linha[3]
                 foco = linha[6]
                 tmp = foco.split(':')
                 QUESTAO = str(tmp[0] + tmp[1])
                 DIFC = str(tmp[2])
-                RESPOSTA = QUESTAO + ':' + str(tmp[4])
+                RESPOSTA = QUESTAO + str(tmp[4])
                 tmp2 = tmp[3].split('-')
                 DISCIPLINA = str(tmp2[0])
                 TOPICO = str(tmp2[1])
@@ -129,61 +156,77 @@ class ParsePetriNet:
 
                 placeQ = PNetPlace(QUESTAO, DISCIPLINA, TOPICO, DIFC, TEMPO)
 
-                tupla1 = [QUESTAO, placeQ]
-                tupla1[1].count += 1
+                pair1 = [QUESTAO, placeQ]
+                pair1[1].count += 1
 
-                """for item in self.net.listP:
-                    if self.tupla1[0] == item[0]:
-                        item[1].count += 1
-                        self.tupla1 = item
-                    else:
-                        self.net.addPlace(self.tupla1)"""
-
-                verify = self.hasIn_listP(tupla1)
+                verify = hasIn_listP(pair1, self.net)
 
                 if verify != 0:
-                    tupla1 = verify
-                    print('repetido')
+                    pair1 = verify
                 else:
-                    self.net.addPlace(tupla1)
+                    self.net.addPlace(pair1)
 
                 placeR = PNetPlace(RESPOSTA, None, None, None, TEMPO)
 
-                tupla2 = [RESPOSTA, placeR]
-                tupla2[1].count += 1
+                pair2 = [RESPOSTA, placeR]
+                pair2[1].count += 1
 
-                verify = self.hasIn_listP(tupla2)
+                verifyR = hasIn_listP(pair2, self.net)
+                verifyG = hasIn_gabList(pair2, answers)
 
-                if verify != 0:
-                    tupla2 = verify
+                if verifyR != 0:
+                    pair2 = verifyR
                 else:
-                    self.net.addPlace(tupla2)
-
-                """if tupla2 in self.net.listP:
-                    index = self.net.listP.index(tupla2)
-                    self.net.listP[index][1].count += 1
-                    tupla2[1].count = self.net.listP[index][1].count
-                else:
-                    self.net.addPlace(tupla2)"""
+                    self.net.addPlace(pair2)
 
                 """
                 Criacao dos objetos de Arcos.
                 """
 
-                arc1 = PNetArc(last, tupla1, tupla1[1].count, self.net)
-                arc2 = PNetArc(tupla1, self.net.listT[last[0] + 1],
-                               tupla1[1].count, self.net)
-                arc3 = PNetArc(self.net.listT[last[0] + 1], tupla2,
-                               tupla2[1].count, self.net)
-                arc4 = PNetArc(tupla2, self.net.listT[last[0] + 2],
-                               tupla2[1].count, self.net)
+                if verifyG == 1:
+                    i = return_index(QUESTAO + 'V', self.net)
+                    self.net.listP[i][1].count += 1
+                    self.net.listP[i][1].time = TEMPO
 
-                self.net.addArc(arc1)
-                self.net.addArc(arc2)
-                self.net.addArc(arc3)
-                self.net.addArc(arc4)
+                    pair3 = self.net.listP[i]
 
-                last = self.net.listT[last[0] + 2]
+                    arc1 = PNetArc(last, pair1, pair1[1].count, self.net)
+                    arc2 = PNetArc(pair1, self.net.listT[last[0] + 1],
+                                   pair1[1].count, self.net)
+                    arc3 = PNetArc(self.net.listT[last[0] + 1], pair2,
+                                   pair2[1].count, self.net)
+                    arc4 = PNetArc(self.net.listT[last[0] + 1], pair3,
+                                   pair3[1].count, self.net)
+                    arc5 = PNetArc(pair2, self.net.listT[last[0] + 2],
+                                   pair2[1].count, self.net)
+                    arc6 = PNetArc(pair3, self.net.listT[last[0] + 2],
+                                   pair3[1].count, self.net)
+
+                    self.net.addArc(arc1)
+                    self.net.addArc(arc2)
+                    self.net.addArc(arc3)
+                    self.net.addArc(arc4)
+                    self.net.addArc(arc5)
+                    self.net.addArc(arc6)
+
+                    last = self.net.listT[last[0] + 2]
+
+                else:
+
+                    arc1 = PNetArc(last, pair1, pair1[1].count, self.net)
+                    arc2 = PNetArc(pair1, self.net.listT[last[0] + 1],
+                                   pair1[1].count, self.net)
+                    arc3 = PNetArc(self.net.listT[last[0] + 1], pair2,
+                                   pair2[1].count, self.net)
+                    arc4 = PNetArc(pair2, self.net.listT[last[0] + 2],
+                                   pair2[1].count, self.net)
+
+                    self.net.addArc(arc1)
+                    self.net.addArc(arc2)
+                    self.net.addArc(arc3)
+                    self.net.addArc(arc4)
+
+                    last = self.net.listT[last[0] + 2]
 
             placeSS = PNetPlace('SS', None, None, None, None)
             placeSS.count += 1
@@ -194,10 +237,10 @@ class ParsePetriNet:
                             self.net)
             self.net.addArc(arcSS)
 
-            self.net.id = self.aluno
+            self.net.id = self.student
 
         log.close()
 
-        #self.net.orderedMaps()
+        # self.net.orderedMaps()
 
         return self.net
