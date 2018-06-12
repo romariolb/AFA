@@ -1,8 +1,3 @@
-import time  # timestamp for id generation
-from random import randint  # random number for id generation
-from br.icomp.ufam.petrinet.PNetNode import PNetNode
-
-
 class PNetPlace:
 
     def __init__(self, name, disciplina, topico, dificuldade, tempo):

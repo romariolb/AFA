@@ -8,6 +8,7 @@ from br.icomp.ufam.petrinet.PNetArc import PNetArc
 def hasIn_listP(pair, net):
     """
 
+    :param net: PNet
     :param pair: list
     :return: tupla: list || 0
     """
@@ -20,7 +21,7 @@ def hasIn_listP(pair, net):
             pair = item
             return pair
         else:
-            v = 0
+            pass
     return 0
 
 

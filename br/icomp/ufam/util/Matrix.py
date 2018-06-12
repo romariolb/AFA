@@ -3,10 +3,10 @@ class Matrix:
     def __init__(self, net):
         """
 
-        :type pnet: PNet
+        :type net: PNet
         """
         self.net = net
-        #self.arcs = self.net.listA
+        # self.arcs = self.net.listA
         self.linhas = len(net.listT)
         self.colunas = len(net.listP)
         self.matrizI = []
@@ -16,13 +16,13 @@ class Matrix:
     def __str__(self):
         text = '--- Matriz de input:\n'
 
-        for linha in self.matrizI:
+        """for linha in self.matrizI:
             text += str(linha) + '\n'
 
         text += '---Matriz de output:\n'
 
         for linha in self.matrizO:
-            text += str(linha) + '\n'
+            text += str(linha) + '\n' """
 
         text += '---Matriz D:\n'
 

@@ -2,11 +2,11 @@
 import sys
 
 
-def parseLog(strfile):
+def parseLog(str_file):
     gabList = []
-    finput = open(strfile, "r")
+    f_input = open(str_file, "r")
     count = 0
-    for line in finput:
+    for line in f_input:
         count += 1
         out = "Q" + str(count)
         q, ra, rb, rc, rd, re, d1, d2, d3, t = line.replace("\n", "").split(" ")
@@ -25,12 +25,12 @@ def parseLog(strfile):
         gabList.append([out, t])
         # print(out,t)
 
-    finput.close()
-    print("Arquivo criado: ", "out" + strfile)
+    f_input.close()
+    # print("Arquivo criado: ", "out" + str_file)
     return gabList
 
 
 # print(sys.argv[1],sys.argv[2])
-if len(sys.argv) == 2: # and (os.path.isfile('./' + sys.argv[1])):
-    fname = sys.argv[1]
-    parseLog(fname)
+if len(sys.argv) == 2:  # and (os.path.isfile('./' + sys.argv[1])):
+    f_name = sys.argv[1]
+    parseLog(f_name)

@@ -1,7 +1,5 @@
 import time  # timestamp for id generation
 from random import randint  # random number for id generation
-from collections import OrderedDict
-from array import array
 
 
 class PNet:
@@ -25,7 +23,7 @@ class PNet:
         """
         :type place: PNetPlace
         """
-        #print('+p')
+        # print('+p')
         self.listP.append(place)
 
     '''
@@ -38,7 +36,7 @@ class PNet:
         """
         :type transition: PNetTransition
         """
-        #print('+t')
+        # print('+t')
         self.listT.append(transition)
 
     '''
@@ -51,7 +49,7 @@ class PNet:
         """
         :type arc: PNetArc
         """
-        #print('+a')
+        # print('+a')
         self.listA.append(arc)
 
     """def orderedMaps(self):
@@ -62,12 +60,12 @@ class PNet:
     def __str__(self):
         text = '--- Net:'
         text += str(self.id) + '\n'
-        text += '\nTransitions:\n'
+        """text += '\nTransitions:\n'
         for transition in self.listT:
             text += str(transition[1]) + '\n'
         text += '\nPlaces:\n'
         for place in self.listP:
-            text += str(place[0]) + ' ' + str(place[1].count) + '\n'
+            text += str(place[0]) + ' ' + str(place[1].count) + '\n' """
         text += '\nArcos:\n'
         for edge in self.listA:
             text += str(edge) + '\n'
