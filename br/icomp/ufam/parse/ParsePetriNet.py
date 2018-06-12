@@ -183,9 +183,11 @@ class ParsePetriNet:
                 Criacao dos objetos de Arcos.
                 """
 
+                i = return_index(QUESTAO + 'V', self.net)
+
                 if verifyG == 1:
-                    i = return_index(QUESTAO + 'V', self.net)
                     self.net.listP[i][1].count += 1
+                    self.net.listP[i][1].last = 1
                     self.net.listP[i][1].time = TEMPO
 
                     pair3 = self.net.listP[i]
@@ -199,19 +201,21 @@ class ParsePetriNet:
                                    pair3[1].count, self.net)
                     arc5 = PNetArc(pair2, self.net.listT[last[0] + 2],
                                    pair2[1].count, self.net)
-                    arc6 = PNetArc(pair3, self.net.listT[last[0] + 2],
-                                   pair3[1].count, self.net)
 
                     self.net.addArc(arc1)
                     self.net.addArc(arc2)
                     self.net.addArc(arc3)
                     self.net.addArc(arc4)
                     self.net.addArc(arc5)
-                    self.net.addArc(arc6)
 
                     last = self.net.listT[last[0] + 2]
 
                 else:
+
+                    if self.net.listP[i][1].last == 1:
+                        arc0 = PNetArc(self.net.listP[i], last, self.net.listP[i][1].count, self.net)
+                        self.net.addArc(arc0)
+                        self.net.listP[i][1].last = 0
 
                     arc1 = PNetArc(last, pair1, pair1[1].count, self.net)
                     arc2 = PNetArc(pair1, self.net.listT[last[0] + 1],
