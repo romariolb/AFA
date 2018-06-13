@@ -34,5 +34,5 @@ class PNetArc:
             return self.net.listP[index][1]
 
     def __str__(self):
-        return str(self.id) + '| ' + str(self.find_source().name) + "-->" + str(self.find_target().name) + \
+        return str(self.find_source().name) + "-->" + str(self.find_target().name) + \
                '| ' + str(self.inscription)

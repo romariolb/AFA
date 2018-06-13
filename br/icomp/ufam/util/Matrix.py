@@ -1,3 +1,5 @@
+import numpy as np
+
 class Matrix:
 
     def __init__(self, net):
@@ -17,17 +19,19 @@ class Matrix:
         text = '--- Matriz de input:\n'
 
         """for linha in self.matrizI:
-            text += str(linha) + '\n'
+            text += str(linha) + '\n'"""
 
         text += '---Matriz de output:\n'
 
         for linha in self.matrizO:
-            text += str(linha) + '\n' """
+            text += str(linha) + '\n'
 
-        text += '---Matriz D:\n'
+        """text += '---Matriz D:\n'
+
+        # arr = np.array(self.matrixD)
 
         for linha in self.matrixD:
-            text += str(linha) + '\n'
+            text += str(linha) + '\n'"""
 
         return text
 
@@ -46,7 +50,7 @@ class Matrix:
         place = j
         for arc in self.net.listA:
             if place == arc.source and transition == arc.target:
-                return True
+                return arc.inscription
         return False
 
     def hasArcO(self, i, j):
@@ -65,7 +69,7 @@ class Matrix:
         place = j
         for arc in self.net.listA:
             if transition == arc.source and place == arc.target:
-                return True
+                return arc.inscription
         return False
 
     def setMatrixI(self):
@@ -81,8 +85,9 @@ class Matrix:
         for transition in valuesT:
             linha = []
             for place in valuesP:
-                if self.hasArcI(transition, place) is True:
-                    linha.append(place[1].count)
+                ins = self.hasArcI(transition, place)
+                if ins is not False:
+                    linha.append(ins)
                 else:
                     linha.append(0)
             self.matrizI.append(linha)
@@ -100,8 +105,9 @@ class Matrix:
         for transition in valuesT:
             linha = []
             for place in valuesP:
-                if self.hasArcO(transition, place) is True:
-                    linha.append(place[1].count)
+                ins = self.hasArcO(transition, place)
+                if ins is not False:
+                    linha.append(ins)
                 else:
                     linha.append(0)
             self.matrizO.append(linha)
