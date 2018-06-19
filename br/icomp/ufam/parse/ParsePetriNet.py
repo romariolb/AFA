@@ -187,6 +187,13 @@ class ParsePetriNet:
                 i = return_index(QUESTAO + 'V', self.net)
 
                 if verifyG == 1:
+
+                    if self.net.listP[i][1].last == 1:
+                        arc0 = PNetArc(self.net.listP[i], last, self.net.listP[i][1].count, self.net)
+                        self.net.listT[last[0]][1].preBinding.append(self.net.listP[i])
+                        # add o lugar necessario para disparo de transicao
+                        self.net.addArc(arc0)
+
                     self.net.listP[i][1].count += 1
                     self.net.listP[i][1].last = 1
                     self.net.listP[i][1].time = TEMPO
@@ -196,12 +203,14 @@ class ParsePetriNet:
                     arc1 = PNetArc(last, pair1, pair1[1].count, self.net)
                     arc2 = PNetArc(pair1, self.net.listT[last[0] + 1],
                                    pair1[1].count, self.net)
+                    self.net.listT[last[0] + 1][1].preBinding.append(pair1)
                     arc3 = PNetArc(self.net.listT[last[0] + 1], pair2,
                                    pair2[1].count, self.net)
                     arc4 = PNetArc(self.net.listT[last[0] + 1], pair3,
                                    pair3[1].count, self.net)
                     arc5 = PNetArc(pair2, self.net.listT[last[0] + 2],
                                    pair2[1].count, self.net)
+                    self.net.listT[last[0] + 2][1].preBinding.append(pair2)
 
                     self.net.addArc(arc1)
                     self.net.addArc(arc2)
@@ -211,20 +220,24 @@ class ParsePetriNet:
 
                     last = self.net.listT[last[0] + 2]
 
+
                 else:
 
                     if self.net.listP[i][1].last == 1:
                         arc0 = PNetArc(self.net.listP[i], last, self.net.listP[i][1].count, self.net)
+                        self.net.listT[last[0]][1].preBinding.append(self.net.listP[i])
                         self.net.addArc(arc0)
                         self.net.listP[i][1].last = 0
 
                     arc1 = PNetArc(last, pair1, pair1[1].count, self.net)
                     arc2 = PNetArc(pair1, self.net.listT[last[0] + 1],
                                    pair1[1].count, self.net)
+                    self.net.listT[last[0] + 1][1].preBinding.append(pair1)
                     arc3 = PNetArc(self.net.listT[last[0] + 1], pair2,
                                    pair2[1].count, self.net)
                     arc4 = PNetArc(pair2, self.net.listT[last[0] + 2],
                                    pair2[1].count, self.net)
+                    self.net.listT[last[0] + 2][1].preBinding.append(pair2)
 
                     self.net.addArc(arc1)
                     self.net.addArc(arc2)

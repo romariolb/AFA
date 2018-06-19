@@ -1,4 +1,4 @@
-import numpy as np
+
 
 class Matrix:
 
@@ -18,20 +18,20 @@ class Matrix:
     def __str__(self):
         text = '--- Matriz de input:\n'
 
-        """for linha in self.matrizI:
-            text += str(linha) + '\n'"""
+        for linha in self.matrizI:
+            text += str(linha) + '\n'
 
         text += '---Matriz de output:\n'
 
         for linha in self.matrizO:
             text += str(linha) + '\n'
 
-        """text += '---Matriz D:\n'
+        text += '---Matriz D:\n'
 
         # arr = np.array(self.matrixD)
 
         for linha in self.matrixD:
-            text += str(linha) + '\n'"""
+            text += str(linha) + '\n'
 
         return text
 

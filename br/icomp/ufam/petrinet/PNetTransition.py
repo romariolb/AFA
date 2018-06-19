@@ -9,6 +9,7 @@ class PNetTransition:
         # self.node = PNetNode(ID, 'T' + str(ID))
         self.id = ID
         self.name = 'T' + str(ID)
+        self.preBinding = []
 
     def __str__(self):
         return str(self.name)

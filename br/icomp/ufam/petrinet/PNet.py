@@ -13,6 +13,13 @@ class PNet:
         # self.transitions = dict(ID='', name='', expGuard='', preBinding='', code='', var='')
         # self.arcs = dict(ID='', source='', target='', inscription='')
 
+    def return_weigth(self, source, target):
+        for arc in self.listA:
+            if source == arc.source and target == arc.target:
+                return arc.inscription
+            else:
+                pass
+
     '''
     Os lugares ficam salvos numa lista com varios dicionarios. Cada elemento da lista possui um dicionario
     com os mesmos cabecalhos, mas com valores diferentes. Futuramente, uma verificacao deve ser feita para
@@ -60,9 +67,10 @@ class PNet:
     def __str__(self):
         text = '--- Net:'
         text += str(self.id) + '\n'
-        """text += '\nTransitions:\n'
+        text += '\nTransitions:\n'
         for transition in self.listT:
-            text += str(transition[1]) + '\n'
+            text += str(transition[1].name) + ' | ' + str(transition[1].preBinding) + '\n'
+        """
         text += '\nPlaces:\n'
         for place in self.listP:
             text += str(place[0]) + ' ' + str(place[1].count) + '\n' """
