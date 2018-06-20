@@ -4,6 +4,8 @@ from br.icomp.ufam.parse.ParsePetriNet import ParsePetriNet
 from br.icomp.ufam.util.Matrix import Matrix
 from br.icomp.ufam.util.PNetExe import PNetExe
 from br.icomp.ufam.util.ParserGabarito import parseLog
+from br.icomp.ufam.metrics.Score import Score
+from br.icomp.ufam.metrics.Doubt import Doubt
 
 # TESTE DE PARSER
 log = sys.argv[1]
@@ -25,3 +27,11 @@ exe.initMark()
 print(exe)
 exe.calculation()
 print(exe)
+
+score = Score(exe.marking, int(n_q), net)
+score.calculus()
+print(score)
+
+"""doubt = Doubt(score.corrects, score.incorrect, 3)
+doubt.doubtLevel()
+print(doubt)"""
