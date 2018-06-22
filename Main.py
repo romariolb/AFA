@@ -20,7 +20,7 @@ matrix = Matrix(net)
 matrix.setMatrixI()
 matrix.setMatrixO()
 matrix.setMatrixD()
-print(matrix)
+# print(matrix)
 
 exe = PNetExe(matrix, int(n_q))
 exe.initMark()
@@ -32,6 +32,6 @@ score = Score(exe.marking, int(n_q), net)
 score.calculus()
 print(score)
 
-"""doubt = Doubt(score.corrects, score.incorrect, 3)
+doubt = Doubt(score.corrects, score.incorrect, 3)
 doubt.doubtLevel()
-print(doubt)"""
+print(doubt)

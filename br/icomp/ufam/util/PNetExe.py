@@ -133,8 +133,8 @@ class PNetExe:
         return check
 
     def calculation(self):
-        print('=> ' + str(self.transitions))
-        print('-> ' + str(self.marking))
+        # print('=> ' + str(self.transitions))
+        # print('-> ' + str(self.marking))
         self.enabledTransition()
 
         if self.haveTransitions() != 0:
