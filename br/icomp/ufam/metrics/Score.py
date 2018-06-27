@@ -1,3 +1,6 @@
+from br.icomp.ufam.petrinet.PNetPlace import PNetPlace
+
+
 def findPlace(index, net):
     for item in net.listP:
         if item[0] == 'Q' + str(index + 1):

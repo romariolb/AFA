@@ -40,10 +40,14 @@ class Doubt:
         return text
 
     def doubtLevel(self):
+        # print(str(self.incorrect))
         for i in range(len(self.corrects)):
             self.corrects[i].append(self.corrects[i][1].count)
-        for i in range(len(self.incorrect)):
-            self.incorrect[i].append(self.incorrect[i][1].count)
+        for j in range(len(self.incorrect)):
+            if self.incorrect[j] is not None:
+                self.incorrect[j].append(self.incorrect[j][1].count)
+            else:
+                self.incorrect[j] = [0, 0, 0]
 
         x = orderedList(self.corrects)
         y = orderedList(self.incorrect)

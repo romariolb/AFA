@@ -12,7 +12,7 @@ log = sys.argv[1]
 gab = sys.argv[2]
 n_q = sys.argv[3]
 answers_list = parseLog(str(gab))
-net = ParsePetriNet().parse_csv_file(str(log), answers_list)
+net = ParsePetriNet(str(gab)).parse_csv_file(str(log), answers_list)
 
 print(net)
 

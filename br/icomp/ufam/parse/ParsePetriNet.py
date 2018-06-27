@@ -5,7 +5,7 @@ from br.icomp.ufam.petrinet.PNetTransition import PNetTransition
 from br.icomp.ufam.petrinet.PNetArc import PNetArc
 
 
-def hasIn_listP(pair, net):
+def hasIn_listP(pair, net, dev):
     """
 
     :param net: PNet
@@ -18,6 +18,7 @@ def hasIn_listP(pair, net):
             # print('igual')
             i = net.listP.index(item)
             net.listP[i][1].count += 1
+            net.listP[i][1].desvio = dev
             pair = item
             return pair
         else:
@@ -40,6 +41,31 @@ def return_index(strid, net):
     return 0
 
 
+def verify_deviation(question, answer, str_file):
+    f_input = open(str_file, 'r')
+    for line in f_input:
+        q, ra, rb, rc, rd, re, d1, d2, d3, t = line.replace("\n", "").split(" ")
+        if question == int(q):
+            if answer == 'A':
+                f_input.close()
+                return int(ra)
+            elif answer == 'B':
+                f_input.close()
+                return int(rb)
+            elif answer == 'C':
+                f_input.close()
+                return int(rc)
+            elif answer == 'D':
+                f_input.close()
+                return int(rd)
+            elif answer == 'E':
+                f_input.close()
+                return int(re)
+            else:
+                f_input.close()
+                return 0
+
+
 class ParsePetriNet:
     """ This class represents a Petri net.
 
@@ -52,9 +78,10 @@ class ParsePetriNet:
     net.places: Map of (id, place) of all places of this Petri net
     """
 
-    def __init__(self):
+    def __init__(self, f_input):
         self.student = None
         self.net = PNet()
+        self.f_input = f_input
         # print('criou obj NET {}'.format(self.net))
 
     def __str__(self):
@@ -141,8 +168,10 @@ class ParsePetriNet:
                 foco = linha[6]
                 tmp = foco.split(':')
                 QUESTAO = str(tmp[0] + tmp[1])
+                q_n = int(tmp[1])
                 DIFC = str(tmp[2])
                 RESPOSTA = QUESTAO + str(tmp[4])
+                r_n = str(tmp[4])
                 tmp2 = tmp[3].split('-')
                 DISCIPLINA = str(tmp2[0])
                 TOPICO = str(tmp2[1])
@@ -155,12 +184,14 @@ class ParsePetriNet:
                 senao, ele insere o lugar novo e inicia o contador com 1
                 """
 
+                dev = verify_deviation(q_n, r_n, self.f_input)
+
                 placeQ = PNetPlace(QUESTAO, DISCIPLINA, TOPICO, DIFC, TEMPO)
 
                 pair1 = [QUESTAO, placeQ]
                 pair1[1].count += 1
 
-                verify = hasIn_listP(pair1, self.net)
+                verify = hasIn_listP(pair1, self.net, dev)
 
                 if verify != 0:
                     pair1 = verify
@@ -169,10 +200,12 @@ class ParsePetriNet:
 
                 placeR = PNetPlace(RESPOSTA, None, None, None, TEMPO)
 
+                placeR.desvio = dev
+
                 pair2 = [RESPOSTA, placeR]
                 pair2[1].count += 1
 
-                verifyR = hasIn_listP(pair2, self.net)
+                verifyR = hasIn_listP(pair2, self.net, dev)
                 verifyG = hasIn_gabList(pair2, answers)
 
                 if verifyR != 0:
