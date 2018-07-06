@@ -7,7 +7,9 @@ from br.icomp.ufam.petrinet.PNetArc import PNetArc
 
 def hasIn_listP(pair, net, dev):
     """
+    Verifica se um lugar já existe na lista de lugares
 
+    :param dev: int
     :param net: PNet
     :param pair: list
     :return: tupla: list || 0
@@ -27,6 +29,15 @@ def hasIn_listP(pair, net, dev):
 
 
 def hasIn_gabList(pair, answers):
+    """
+    verifica se o lugar de resposta é a desejada no gabarito.
+    Cria retorna 1 se sim
+    0 senão.
+
+    :param pair: [questão, respostas]
+    :param answers: questão, resposta
+    :return: 1||0
+    """
     for item in answers:
         if pair[0] == item[0]:
             return 1
@@ -34,6 +45,12 @@ def hasIn_gabList(pair, answers):
 
 
 def return_index(strid, net):
+    """
+    retorna o indice de um lugar, se ele existir.
+    :param strid: id
+    :param net: PNet
+    :return:
+    """
     for item in net.listP:
         if strid == item[0]:
             indice = net.listP.index(item)
@@ -42,6 +59,13 @@ def return_index(strid, net):
 
 
 def verify_deviation(question, answer, str_file):
+    """
+    verifica o desvio da resposta
+    :param question: str
+    :param answer: str
+    :param str_file: arg
+    :return:
+    """
     f_input = open(str_file, 'r')
     for line in f_input:
         q, ra, rb, rc, rd, re, d1, d2, d3, t = line.replace("\n", "").split(" ")
@@ -67,15 +91,13 @@ def verify_deviation(question, answer, str_file):
 
 
 class ParsePetriNet:
-    """ This class represents a Petri net.
+    """Esta classe representa uma rede de Petri. Uma rede de Petri consiste em
+     um conjunto de transições rotuladas, lugares marcados e
+     arcos de lugares para transições ou transições para lugares.
 
-    This class represents a Petri net. A Petri net consists of
-    a set of labelled labelled transitions, labelled places and
-    arcs from places to transitions or transitions to places.
-
-    net.edges: List of all edges of this Petri net
-    net.transitions: Map of (id, transition) of all transisions of this Petri net
-    net.places: Map of (id, place) of all places of this Petri net
+     net.edges: Lista de todas as arestas desta rede de Petri
+     net.transitions: Lista de [id, transição] de todas as transições desta rede de Petri
+     net.places: Lista de [id, lugar] de todos os lugares desta rede de Petri
     """
 
     def __init__(self, f_input):
@@ -110,7 +132,10 @@ class ParsePetriNet:
         # self.net = PNet()
 
         # print('instaciou obj NET')
-
+        """
+        cria os estados de verificação, para que eles fiquem nas primeiras
+        posições do vetor.
+        """
         for item in answers:
             indice = answers.index(item) + 1
             Nome = 'Q' + str(indice) + 'V'
@@ -118,7 +143,9 @@ class ParsePetriNet:
             t = [Nome, p]
 
             self.net.addPlace(t)
-
+        """
+        Cria o estado S, transição 0 e primeiro arco, inicial.
+        """
         placeS = PNetPlace('S', None, None, None, None)
         placeS.count += 1
         pairS = ['S', placeS]
@@ -138,6 +165,9 @@ class ParsePetriNet:
 
         # print('criou o 1 arco')
 
+        """
+        Cria as transições. 2 x MAX(linhas do arquivo).
+        """
         with open(file, 'r') as log:
             t_max = sum(1 for row in log)
             t_max = t_max * 2
@@ -193,6 +223,11 @@ class ParsePetriNet:
 
                 verify = hasIn_listP(pair1, self.net, dev)
 
+                """
+                Verifica se o par (id_place, obj_place) Questão já existe.
+                Se existir ele é retornado para variável temporaria
+                senão o par é adicionado lista de Lugares.
+                """
                 if verify != 0:
                     pair1 = verify
                 else:
@@ -208,6 +243,11 @@ class ParsePetriNet:
                 verifyR = hasIn_listP(pair2, self.net, dev)
                 verifyG = hasIn_gabList(pair2, answers)
 
+                """
+                Verifica se o par (id_place, obj_place) resposta já existe.
+                Se existir ele é retornado para variável temporaria
+                senão o par é adicionado lista de Lugares.
+                """
                 if verifyR != 0:
                     pair2 = verifyR
                 else:
