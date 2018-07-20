@@ -135,6 +135,26 @@ class ParsePetriNet:
 
         return text
 
+    @staticmethod
+    def returnArc(source, target, net):
+        """
+
+        :param source: ["id", obj]
+        :param target: ["id", obj]
+        :param net: PNet
+        :return: obj
+
+        Com isso, você consegue o obj individual de cada arco criado
+        Assim, voce so precisa receber esse obj e pegar o atributo
+        inscription. Ex: var = returnArc(pair_lugar, pair_transition, net)
+        print(str(var.inscription))
+        """
+        for arc in net.listA:
+            if source[0] == arc.source[0] and target[0] == arc.target[0]:
+                return arc
+            else:
+                pass
+
     def parse_csv_file(self, file, answers_list):
 
         answers = answers_list
