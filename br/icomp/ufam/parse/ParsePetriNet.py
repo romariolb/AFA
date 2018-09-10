@@ -13,7 +13,7 @@ def returnArc(source, target, net):
     :param net: PNet
     :return: obj
 
-    Com isso, você consegue o obj individual de cada arco criado
+    Com isso, voce consegue o obj individual de cada arco criado
     Assim, voce so precisa receber esse obj e pegar o atributo
     inscription. Ex: var = returnArc(pair_lugar, pair_transition, net)
     print(str(var.inscription))
@@ -144,7 +144,7 @@ class ParsePetriNet:
         :param net: PNet
         :return: obj
 
-        Com isso, você consegue o obj individual de cada arco criado
+        Com isso, voce consegue o obj individual de cada arco criado
         Assim, voce so precisa receber esse obj e pegar o atributo
         inscription. Ex: var = returnArc(pair_lugar, pair_transition, net)
         print(str(var.inscription))
