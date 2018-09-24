@@ -1,6 +1,7 @@
 import sys  # argv for test file path
 from collections import OrderedDict
 
+from br.icomp.ufam.metrics.Deviation import Deviation
 from br.icomp.ufam.parse.ParsePetriNet import ParsePetriNet
 from br.icomp.ufam.util.Matrix import Matrix
 from br.icomp.ufam.util.PNetExe import PNetExe
@@ -37,8 +38,14 @@ doubt = Doubt(score.corrects, score.incorrect, 3)
 doubt.doubtLevel()
 print(doubt)
 
+dev = Deviation(exe.marking, int(n_q), net)
+dev.listIncorrects()
+dev.mapQuest()
+dev.calculus()
+print(dev)
 
-def returnArc(src, tgt, net):
+
+"""def returnArc(src, tgt, net):
     for arc in net.listA:
 
         if src[0] == arc.source[0] and tgt[0] == arc.target[0]:
@@ -173,4 +180,4 @@ def exportGraph(net, fpath):
         "Export Done! Create an image with this command(demands Graphviz): dot -Tjpg " + outFile + ".dot -o " + outFile + ".jpg")
 
 
-exportGraph(net, log)
+exportGraph(net, log)"""

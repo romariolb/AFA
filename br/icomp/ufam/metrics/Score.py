@@ -18,7 +18,7 @@ class Score:
         :param numQuestions: int
         """
         self.finalMark = marking
-        self.numQuestions = numQuestions
+        self.numQuestions = numQuestions - 5
         self.net = net
         self.numCorrects = 0
         self.corrects = []
@@ -28,14 +28,14 @@ class Score:
     def __str__(self):
         text = 'Voce conseguiu acertar {} de {} questoes e sua pontuacao foi de {} pontos\n'.format(self.numCorrects,
                                                                                                     self.numQuestions,
-                                                                                                    self.score)
+                                                                                                    round(self.score, 2))
         text += 'ACERTADAS: \n'
         for i in self.corrects:
             text += str(i) + '\n'
         return text
 
     def calculus(self):
-        for i in range(self.numQuestions):
+        for i in range(1, self.numQuestions):
             if self.finalMark[i] != 0:
                 self.numCorrects += 1
                 self.corrects.append(findPlace(i, self.net))
