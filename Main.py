@@ -38,7 +38,7 @@ doubt = Doubt(score.corrects, score.incorrect, 3)
 doubt.doubtLevel()
 print(doubt)
 
-dev = Deviation(exe.marking, int(n_q), net)
+dev = Deviation(exe.marking, int(n_q), net, score)
 dev.listIncorrects()
 dev.mapQuest()
 dev.calculus()

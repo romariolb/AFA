@@ -1,4 +1,3 @@
-from br.icomp.ufam.petrinet.PNetPlace import PNetPlace
 
 """
 10/numQuestoes = X | X = 60
@@ -25,7 +24,7 @@ def findArcSource(question, net):
             for a2 in net.listA:
                 if a1.target[0] == a2.source[0]:  # transicao
                     if a2.target[1].desvio != d:
-                        d = a2.target[1].desvio
+                        d = a2.target[1].desvio #o desvio vai de 0 a 4, soma os valores de desvio dividido pelo desvio maximo (qntd de questoes).
                     else:
                         pass
                 else:
@@ -36,9 +35,10 @@ def findArcSource(question, net):
 
 
 class Deviation:
-    def __init__(self, marking, numQuestions, net):
+    def __init__(self, marking, numQuestions, net, score):
         """
 
+        :type score: Score
         :type net: PNet
         :param marking: list
         :param numQuestions: int
@@ -49,7 +49,8 @@ class Deviation:
         self.numIncorrects = 0
         self.incorrect_dev = []
         self.incorrect = []
-        self.score = 0.0
+        self.scoreP = score
+        self.score = float
 
     def __str__(self):
         text = 'Voce errou {} de {} questoes \n'.format(self.numIncorrects - 5,
@@ -83,14 +84,25 @@ class Deviation:
                 pass
 
     def calculus(self):
-        val_q = float(10.0 / self.numQuestions)
-        print('Cada questao vale: ' + str(val_q))
+        soma = 0
+        # val_q = float(10.0 / self.numQuestions)
+        # print('Cada questao vale: ' + str(val_q))
         for d in self.incorrect_dev:
-            if d[1] == 4:
-                self.score += (90 * val_q)/100
-            elif d[1] == 3:
-                self.score += (60 * val_q)/100
+            if d[1] == 3:
+                soma += 3
             elif d[1] == 2:
-                self.score += (30 * val_q)/100
+                soma += 2
+            elif d[1] == 1:
+                soma += 1
             else:
-                self.score += 0
+                soma += 0
+
+        tam = len(self.scoreP.corrects)
+
+        soma += (4 * tam)
+        print('soma ', soma)
+
+        temp = 4 * self.numQuestions
+        print('temp ', temp)
+
+        self.score = float(float(soma) / float(temp))

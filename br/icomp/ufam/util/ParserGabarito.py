@@ -10,15 +10,15 @@ def parseLog(str_file):
         count += 1
         out = "Q" + str(count)
         q, ra, rb, rc, rd, re, d1, d2, d3, t = line.replace("\n", "").split(" ")
-        if int(ra) == 5:
+        if int(ra) == 4:
             out = out + "A"
-        elif int(rb) == 5:
+        elif int(rb) == 4:
             out = out + "B"
-        elif int(rc) == 5:
+        elif int(rc) == 4:
             out = out + "C"
-        elif int(rd) == 5:
+        elif int(rd) == 4:
             out = out + "D"
-        elif int(re) == 5:
+        elif int(re) == 4:
             out = out + "E"
         else:
             out = out + "X"

@@ -35,7 +35,7 @@ class Score:
         return text
 
     def calculus(self):
-        for i in range(1, self.numQuestions):
+        for i in range(self.numQuestions):
             if self.finalMark[i] != 0:
                 self.numCorrects += 1
                 self.corrects.append(findPlace(i, self.net))
