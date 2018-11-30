@@ -4,10 +4,6 @@
     <list default="true" id="f2972196-1853-40aa-92b1-22efa3b516df" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Support/Files/gabaritoPCompreensao.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Support/Files/gabaritoPCompreensao.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/br/icomp/ufam/metrics/Deviation.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/metrics/Deviation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/br/icomp/ufam/metrics/Score.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/metrics/Score.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/br/icomp/ufam/util/ParserGabarito.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/util/ParserGabarito.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,8 +17,8 @@
       <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="40" column="50" lean-forward="true" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
+            <state relative-caret-position="17">
+              <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -30,11 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ParsePetriNet.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ParsePetriNet.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/br/icomp/ufam/parse/ParsePetriNet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="159" column="8" selection-start-line="159" selection-start-column="8" selection-end-line="159" selection-end-column="8" />
+            <state relative-caret-position="204">
+              <caret line="170" column="28" lean-forward="true" selection-start-line="170" selection-start-column="28" selection-end-line="170" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -42,17 +38,17 @@
       <file leaf-file-name="Score.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/Score.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
+            <state relative-caret-position="391">
               <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Deviation.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Deviation.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/Deviation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="107" column="52" selection-start-line="107" selection-start-column="52" selection-end-line="107" selection-end-column="52" />
+            <state relative-caret-position="204">
+              <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -116,16 +112,16 @@
         <option value="$PROJECT_DIR$/br/icomp/ufam/util/PNetExe.py" />
         <option value="$PROJECT_DIR$/Support/Files/gabaritoPCompreensao.txt" />
         <option value="$PROJECT_DIR$/br/icomp/ufam/util/ParserGabarito.py" />
-        <option value="$PROJECT_DIR$/Main.py" />
         <option value="$PROJECT_DIR$/br/icomp/ufam/metrics/Score.py" />
         <option value="$PROJECT_DIR$/br/icomp/ufam/metrics/Deviation.py" />
+        <option value="$PROJECT_DIR$/Main.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="37" />
-    <option name="width" value="977" />
+    <option name="x" value="-10" />
+    <option name="y" value="35" />
+    <option name="width" value="980" />
     <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -136,7 +132,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -195,6 +190,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -539,12 +535,18 @@
       <option name="project" value="LOCAL" />
       <updated>1537819268360</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="27_commit&#10;&#10;mudanca nos niveis de desvio no gabarito para VALOR-1, indo de 0 a 4. Mudanca no codigo para calculo da metrica de desvio sendo: O SOMATORIO DOS NIVEIS DE DESVIO DAS QUESTOES / DESVIO MAXIMO">
+      <created>1537989021771</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1537989021772</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="23" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992743" visible="true" weight="0.13417052" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -624,7 +626,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="3_commit&#10;&#10;Implementação das estruturas das matrizes de input e output da rede. Foram criados dois métodos de verificação de relação entre lugares e transições, um método para cada uma das duas matrizes." />
     <MESSAGE value="4_commit&#10;&#10;Implementação das estruturas das matrizes de input e output da rede. Foram criados dois métodos de verificação de relação entre lugares e transições, um método para cada uma das duas matrizes." />
     <MESSAGE value="5_commit&#10;&#10;Implementação das estruturas das matrizes de input e output da rede. Foram criados dois métodos de verificação de relação entre lugares e transições, um método para cada uma das duas matrizes. Acrescentado a criação da matriz D, usada para executar a rede." />
     <MESSAGE value="5_commit&#10;&#10;Implementação das estruturas das matrizes de input e output da rede. Foram criados dois métodos de verificação de relação entre lugares e transições, um método para cada uma das duas matrizes. Acrescentado a criação da matriz D, usada para executar a rede. Acrescentado alguns comentários." />
@@ -649,7 +650,8 @@
     <MESSAGE value="24_commit&#10;&#10;acrescimo da função de retorno de arcos." />
     <MESSAGE value="25_commit&#10;&#10;acrescimo de novos logs. Algumas imagens estao saindo com problema na coloracao do lugar de questao." />
     <MESSAGE value="26_commit&#10;&#10;Acrescimo da métrica de desvio com base na ultima resposta.&#10;Identificado um problema com a marcação final. Mas não está interferindo na nota. ?" />
-    <option name="LAST_COMMIT_MESSAGE" value="26_commit&#10;&#10;Acrescimo da métrica de desvio com base na ultima resposta.&#10;Identificado um problema com a marcação final. Mas não está interferindo na nota. ?" />
+    <MESSAGE value="27_commit&#10;&#10;mudanca nos niveis de desvio no gabarito para VALOR-1, indo de 0 a 4. Mudanca no codigo para calculo da metrica de desvio sendo: O SOMATORIO DOS NIVEIS DE DESVIO DAS QUESTOES / DESVIO MAXIMO" />
+    <option name="LAST_COMMIT_MESSAGE" value="27_commit&#10;&#10;mudanca nos niveis de desvio no gabarito para VALOR-1, indo de 0 a 4. Mudanca no codigo para calculo da metrica de desvio sendo: O SOMATORIO DOS NIVEIS DE DESVIO DAS QUESTOES / DESVIO MAXIMO" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -848,16 +850,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="10" column="18" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetPlace.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -879,9 +871,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -906,34 +895,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/parse/ParsePetriNet.py">
+    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/Score.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="159" column="8" selection-start-line="159" selection-start-column="8" selection-end-line="159" selection-end-column="8" />
+        <state relative-caret-position="391">
+          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/Score.py">
+    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetPlace.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+        <state relative-caret-position="153">
+          <caret line="9" column="19" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/Deviation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="40" column="50" lean-forward="true" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
+        <state relative-caret-position="17">
+          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/Deviation.py">
+    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/parse/ParsePetriNet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="107" column="52" selection-start-line="107" selection-start-column="52" selection-end-line="107" selection-end-column="52" />
+        <state relative-caret-position="204">
+          <caret line="170" column="28" lean-forward="true" selection-start-line="170" selection-start-column="28" selection-end-line="170" selection-end-column="28" />
         </state>
       </provider>
     </entry>

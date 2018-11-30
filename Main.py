@@ -22,7 +22,7 @@ matrix = Matrix(net)
 matrix.setMatrixI()
 matrix.setMatrixO()
 matrix.setMatrixD()
-# print(matrix)
+print(matrix)
 
 exe = PNetExe(matrix, int(n_q))
 exe.initMark()
