@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f2972196-1853-40aa-92b1-22efa3b516df" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/br/icomp/ufam/metrics/WeightedScore.py" afterDir="false" />
+    <list default="true" id="f2972196-1853-40aa-92b1-22efa3b516df" name="Default" comment="29_commit&#10;&#10;mudança na metrica de desvio e criação da métrica de nota ponderada.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/br/icomp/ufam/metrics/Deviation.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/metrics/Deviation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/br/icomp/ufam/metrics/Score.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/metrics/Score.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/br/icomp/ufam/parse/ParsePetriNet.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/parse/ParsePetriNet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetPlace.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetPlace.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/br/icomp/ufam/metrics/Doubt.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/metrics/Doubt.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,37 +26,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/br/icomp/ufam/util/PNetExe.py">
+        <entry file="file://$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetPlace.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/Score.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="28" column="71" selection-start-line="28" selection-start-column="71" selection-end-line="28" selection-end-column="71" />
+            <state relative-caret-position="187">
+              <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/Deviation.py">
+        <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/Doubt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="108" column="10" selection-start-line="108" selection-start-column="10" selection-end-line="108" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/WeightedScore.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="839">
-              <caret line="84" column="71" lean-forward="true" selection-start-line="84" selection-start-column="71" selection-end-line="84" selection-end-column="71" />
+            <state relative-caret-position="363">
+              <caret line="46" column="45" lean-forward="true" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -109,17 +86,17 @@
         <option value="$PROJECT_DIR$/Support/Files/log-ismael-simulado2.csv" />
         <option value="$PROJECT_DIR$/Support/Files/log-marlene-simulado2.csv" />
         <option value="$PROJECT_DIR$/Support/Files/log-igorlucas-simulado2.CSV" />
-        <option value="$PROJECT_DIR$/br/icomp/ufam/metrics/Doubt.py" />
         <option value="$PROJECT_DIR$/br/icomp/ufam/parse/ParsePetriNet.py" />
         <option value="$PROJECT_DIR$/Support/Files/log-marlene-simulado2.dot" />
         <option value="$PROJECT_DIR$/br/icomp/ufam/util/PNetExe.py" />
         <option value="$PROJECT_DIR$/Support/Files/gabaritoPCompreensao.txt" />
         <option value="$PROJECT_DIR$/br/icomp/ufam/util/ParserGabarito.py" />
-        <option value="$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetPlace.py" />
         <option value="$PROJECT_DIR$/br/icomp/ufam/metrics/Score.py" />
         <option value="$PROJECT_DIR$/Main.py" />
         <option value="$PROJECT_DIR$/br/icomp/ufam/metrics/WeightedScore.py" />
         <option value="$PROJECT_DIR$/br/icomp/ufam/metrics/Deviation.py" />
+        <option value="$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetPlace.py" />
+        <option value="$PROJECT_DIR$/br/icomp/ufam/metrics/Doubt.py" />
       </list>
     </option>
   </component>
@@ -165,31 +142,13 @@
             <path>
               <item name="AFA" type="b2602c69:ProjectViewProjectNode" />
               <item name="AFA" type="462c0819:PsiDirectoryNode" />
-              <item name="br" type="462c0819:PsiDirectoryNode" />
-              <item name="icomp" type="462c0819:PsiDirectoryNode" />
-              <item name="ufam" type="462c0819:PsiDirectoryNode" />
-              <item name="metrics" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AFA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AFA" type="462c0819:PsiDirectoryNode" />
-              <item name="br" type="462c0819:PsiDirectoryNode" />
-              <item name="icomp" type="462c0819:PsiDirectoryNode" />
-              <item name="ufam" type="462c0819:PsiDirectoryNode" />
-              <item name="petrinet" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AFA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AFA" type="462c0819:PsiDirectoryNode" />
-              <item name="br" type="462c0819:PsiDirectoryNode" />
-              <item name="icomp" type="462c0819:PsiDirectoryNode" />
-              <item name="ufam" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="Support" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AFA" type="b2602c69:ProjectViewProjectNode" />
               <item name="AFA" type="462c0819:PsiDirectoryNode" />
               <item name="Support" type="462c0819:PsiDirectoryNode" />
+              <item name="Files" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -569,7 +528,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543541593174</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="29_commit&#10;&#10;mudança na metrica de desvio e criação da métrica de nota ponderada.">
+      <created>1545058418690</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1545058418690</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TodoView">
@@ -583,9 +549,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992743" visible="true" weight="0.13284865" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992743" visible="true" weight="0.13284865" />
       <window_info id="Structure" order="1" sideWeight="0.5007257" side_tool="true" weight="0.13417052" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -674,7 +639,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="5_commit&#10;&#10;Implementação das estruturas das matrizes de input e output da rede. Foram criados dois métodos de verificação de relação entre lugares e transições, um método para cada uma das duas matrizes. Acrescentado a criação da matriz D, usada para executar a rede." />
     <MESSAGE value="5_commit&#10;&#10;Implementação das estruturas das matrizes de input e output da rede. Foram criados dois métodos de verificação de relação entre lugares e transições, um método para cada uma das duas matrizes. Acrescentado a criação da matriz D, usada para executar a rede. Acrescentado alguns comentários." />
     <MESSAGE value="6_commit&#10;&#10;def de parse de arquivo .csv para construção da marcação inicial para Score." />
     <MESSAGE value="7_commit&#10;&#10;mudança completa de arquitetura da rede. agora ela não modela uma métrica mas sim o omportamento de um aluno.&#10;Começo da mudança de estrutura do codigo, para geração de matrizes." />
@@ -699,7 +663,8 @@
     <MESSAGE value="26_commit&#10;&#10;Acrescimo da métrica de desvio com base na ultima resposta.&#10;Identificado um problema com a marcação final. Mas não está interferindo na nota. ?" />
     <MESSAGE value="27_commit&#10;&#10;mudanca nos niveis de desvio no gabarito para VALOR-1, indo de 0 a 4. Mudanca no codigo para calculo da metrica de desvio sendo: O SOMATORIO DOS NIVEIS DE DESVIO DAS QUESTOES / DESVIO MAXIMO" />
     <MESSAGE value="28_commit&#10;&#10;commit de backup antes da restauração de sistema." />
-    <option name="LAST_COMMIT_MESSAGE" value="28_commit&#10;&#10;commit de backup antes da restauração de sistema." />
+    <MESSAGE value="29_commit&#10;&#10;mudança na metrica de desvio e criação da métrica de nota ponderada." />
+    <option name="LAST_COMMIT_MESSAGE" value="29_commit&#10;&#10;mudança na metrica de desvio e criação da métrica de nota ponderada." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/br/icomp/ufam/petrinet/__init__.py" />
@@ -901,13 +866,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/Doubt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/br/icomp/ufam/util/ParserGabarito.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -919,13 +877,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="170" column="28" selection-start-line="170" selection-start-column="28" selection-end-line="170" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/util/PNetExe.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -942,10 +893,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetPlace.py">
+    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/WeightedScore.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        <state relative-caret-position="839">
+          <caret line="84" column="71" lean-forward="true" selection-start-line="84" selection-start-column="71" selection-end-line="84" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/Deviation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1281">
+          <caret line="105" column="30" lean-forward="true" selection-start-line="105" selection-start-column="30" selection-end-line="105" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -953,6 +911,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="346">
           <caret line="28" column="71" selection-start-line="28" selection-start-column="71" selection-end-line="28" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/util/PNetExe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -966,17 +931,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/WeightedScore.py">
+    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetPlace.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="839">
-          <caret line="84" column="71" lean-forward="true" selection-start-line="84" selection-start-column="71" selection-end-line="84" selection-end-column="71" />
+        <state relative-caret-position="187">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/Deviation.py">
+    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/Doubt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="108" column="10" selection-start-line="108" selection-start-column="10" selection-end-line="108" selection-end-column="10" />
+        <state relative-caret-position="363">
+          <caret line="46" column="45" lean-forward="true" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
         </state>
       </provider>
     </entry>

@@ -42,10 +42,10 @@ class Doubt:
     def doubtLevel(self):
         # print(str(self.incorrect))
         for i in range(len(self.corrects)):
-            self.corrects[i].append(self.corrects[i][1].count)
+            self.corrects[i].append(self.corrects[i][1].count - 1)
         for j in range(len(self.incorrect)):
             if self.incorrect[j] is not None:
-                self.incorrect[j].append(self.incorrect[j][1].count)
+                self.incorrect[j].append(self.incorrect[j][1].count - 1)
             else:
                 self.incorrect[j] = [0, 0, 0]
 
