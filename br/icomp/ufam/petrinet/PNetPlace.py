@@ -7,7 +7,7 @@ class PNetPlace:
         self.discipline = disciplina
         self.topic = topico
         self.difficulty = dificuldade
-        self.desvio = 0
+        self.deviation = 0
         self.time = tempo
         self.count = 0
         self.last = 0

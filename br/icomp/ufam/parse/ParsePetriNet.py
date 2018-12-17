@@ -80,7 +80,7 @@ def return_index(strid, net):
 
 def verify_deviation(question, answer, str_file):
     """
-    verifica o desvio da resposta
+    verifica o deviation da resposta
     :param question: str
     :param answer: str
     :param str_file: arg
@@ -267,7 +267,7 @@ class ParsePetriNet:
 
                 placeR = PNetPlace(RESPOSTA, None, None, None, TEMPO)
 
-                placeR.desvio = dev
+                placeR.deviation = dev
 
                 pair2 = [RESPOSTA, placeR]
                 pair2[1].count += 1

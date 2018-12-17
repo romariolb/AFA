@@ -26,7 +26,7 @@ class Score:
         self.score = 0
 
     def __str__(self):
-        text = 'Voce conseguiu acertar {} de {} questoes e sua pontuacao foi de {} pontos\n'.format(self.numCorrects,
+        text = 'Voce conseguiu acertar {} de {} questoes e sua PONTUACAO foi de {} pontos\n'.format(self.numCorrects,
                                                                                                     self.numQuestions,
                                                                                                     round(self.score, 2))
         text += 'ACERTADAS: \n'

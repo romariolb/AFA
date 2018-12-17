@@ -1,10 +1,11 @@
 
 """
 10/numQuestoes = X | X = 60
-desvio 0 -> 0%
-desvio 2 -> %X |30%
-desvio 3 -> %X |60%
-desvio 4 -> %X |90%
+deviation 0 -> 0%
+deviation 1 -> %X |30%
+deviation 2 -> %X |60%
+deviation 3 -> %X |90%
+deviation 4 -> %x |100%
 
 """
 
@@ -23,8 +24,8 @@ def findArcSource(question, net):
         if question[0] == a1.source[0]:  # questao
             for a2 in net.listA:
                 if a1.target[0] == a2.source[0]:  # transicao
-                    if a2.target[1].desvio != d:
-                        d = a2.target[1].desvio #o desvio vai de 0 a 4, soma os valores de desvio dividido pelo desvio maximo (qntd de questoes).
+                    if a2.target[1].deviation != d:
+                        d = a2.target[1].deviation #o deviation vai de 0 a 4, soma os valores de deviation dividido pelo deviation maximo (qntd de questoes).
                     else:
                         pass
                 else:
@@ -50,20 +51,22 @@ class Deviation:
         self.incorrect_dev = []
         self.incorrect = []
         self.scoreP = score
-        self.score = float
+        self.scoreWS = float
+        self.scoreD = float
 
     def __str__(self):
         text = 'Voce errou {} de {} questoes \n'.format(self.numIncorrects - 5,
                                                         self.numQuestions)
-        text += 'ERRADAS: \n'
+        """text += 'ERRADAS: \n'
         for i in self.incorrect:
-            text += str(i) + '\n'
+            text += str(i) + '\n'"""
 
-        text += '\nDesvios:\n'
+        text += '\nDesvios [Questao, Desvio]:\n'
         for j in self.incorrect_dev:
             text += str(j) + '\n'
 
-        text += '\nA nota dos seus desvios foi de: {}\n'.format(self.score)
+        text += '\nConforme sua NOTA PONDERADA ({})'.format(round(self.scoreWS, 2)) + \
+                ' o percentual dos seus DESVIOS e de: {}%\n'.format(round(self.scoreD, 2))
         return text
 
     def listIncorrects(self):
@@ -100,9 +103,10 @@ class Deviation:
         tam = len(self.scoreP.corrects)
 
         soma += (4 * tam)
-        print('soma ', soma)
+        # print('soma ', soma)
 
         temp = 4 * self.numQuestions
-        print('temp ', temp)
+        # print('temp ', temp)
 
-        self.score = float(float(soma) / float(temp))
+        self.scoreWS = float(float(soma) / float(temp)) * 10.0
+        self.scoreD = float(10.0 - float(self.scoreWS)) * 10.0

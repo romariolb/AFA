@@ -1,4 +1,5 @@
-import sys  # argv for test file path
+#import sys  # argv for test file path
+import sys
 from collections import OrderedDict
 
 from br.icomp.ufam.metrics.Deviation import Deviation
@@ -7,12 +8,13 @@ from br.icomp.ufam.util.Matrix import Matrix
 from br.icomp.ufam.util.PNetExe import PNetExe
 from br.icomp.ufam.util.ParserGabarito import parseLog
 from br.icomp.ufam.metrics.Score import Score
+from br.icomp.ufam.metrics.WeightedScore import WeightedScore
 from br.icomp.ufam.metrics.Doubt import Doubt
 
 # TESTE DE PARSER
-log = sys.argv[1]
-gab = sys.argv[2]
-n_q = sys.argv[3]
+log = sys.argv[1] #log
+gab = sys.argv[2] #gabarito
+n_q = sys.argv[3] #numero de questoes
 answers_list = parseLog(str(gab))
 net = ParsePetriNet(str(gab)).parse_csv_file(str(log), answers_list)
 
@@ -22,7 +24,7 @@ matrix = Matrix(net)
 matrix.setMatrixI()
 matrix.setMatrixO()
 matrix.setMatrixD()
-print(matrix)
+# print(matrix)
 
 exe = PNetExe(matrix, int(n_q))
 exe.initMark()
@@ -30,13 +32,21 @@ print(exe)
 exe.calculation()
 print(exe)
 
+print('\n=================PONTUACAO TRADICIONAL===================\n')
+
 score = Score(exe.marking, int(n_q), net)
 score.calculus()
 print(score)
 
-doubt = Doubt(score.corrects, score.incorrect, 3)
-doubt.doubtLevel()
-print(doubt)
+print('\n=================NOTA PONDERADA===================\n')
+
+w_score = WeightedScore(exe.marking, int(n_q), net)
+w_score.listIncorrects()
+w_score.mapQuest()
+w_score.calculus()
+print(w_score)
+
+print('\n=================PERCENTUAL DE DESVIO===================\n')
 
 dev = Deviation(exe.marking, int(n_q), net, score)
 dev.listIncorrects()
@@ -44,6 +54,11 @@ dev.mapQuest()
 dev.calculus()
 print(dev)
 
+print('\n=================NIVEL DE DUVIDA===================\n')
+
+doubt = Doubt(score.corrects, score.incorrect, 3)
+doubt.doubtLevel()
+print(doubt)
 
 """def returnArc(src, tgt, net):
     for arc in net.listA:
@@ -141,9 +156,9 @@ def exportGraph(net, fpath):
 
                 if i[1].name[-1].isalpha():
 
-                    nodeatts = "fillcolor=" + str(i[1].desvio + 2) + "; "
+                    nodeatts = "fillcolor=" + str(i[1].deviation + 2) + "; "
 
-                    if ((i[1].desvio + 2) >= 5): nodeatts += "fontcolor=white;";
+                    if ((i[1].deviation + 2) >= 5): nodeatts += "fontcolor=white;";
 
         # PRINT IF IS A QUESTION OR ANSWER
 
