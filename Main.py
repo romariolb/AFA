@@ -10,6 +10,7 @@ from br.icomp.ufam.util.ParserGabarito import parseLog
 from br.icomp.ufam.metrics.Score import Score
 from br.icomp.ufam.metrics.WeightedScore import WeightedScore
 from br.icomp.ufam.metrics.Doubt import Doubt
+from br.icomp.ufam.metrics.Confusion import Confusion
 
 # TESTE DE PARSER
 log = sys.argv[1] #log
@@ -59,6 +60,13 @@ print('\n=================NIVEL DE DUVIDA===================\n')
 doubt = Doubt(score.corrects, score.incorrect, 3)
 doubt.doubtLevel()
 print(doubt)
+
+print('\n=================NIVEL DE CONFUSAO===================\n')
+
+confusion = Confusion(score.corrects, score.incorrect)
+confusion.confusionLevel()
+confusion.calculus()
+print(confusion)
 
 """def returnArc(src, tgt, net):
     for arc in net.listA:
