@@ -35,3 +35,8 @@ class Confusion:
 
     def calculus(self):
         self.score = float(1.0 - (float(len(self.corrects)) / float(self.sum)))
+
+"""
+o aluno benjamin fica com esse coeficiente negativo. pq? tem problema?
+verificar numero de marcacao do denominador da metrica.
+"""
