@@ -81,7 +81,7 @@ class Deviation:
 
     def mapQuest(self):
         for q in self.incorrect:
-            print(str(q))
+            # print(str(q))
             if q is not None:
                 d = findArcSource(q, self.net)
                 self.incorrect_dev.append([q[0], d])

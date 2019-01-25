@@ -53,7 +53,7 @@ w_s = w_score.getScore()
 
 print('\n=================PERCENTUAL DE DESVIO===================\n')
 
-"""dev = Deviation(exe.marking, int(n_q), net, score, n_f, w_s, incorrect)
+dev = Deviation(exe.marking, int(n_q), net, score, n_f, w_s, incorrect)
 dev.listIncorrects()
 dev.mapQuest()
 dev.calculus()
@@ -61,7 +61,7 @@ print(dev)
 
 print('\n=================NIVEL DE DUVIDA===================\n')
 
-doubt = Doubt(score.corrects, score.incorrect, 3)
+"""doubt = Doubt(score.corrects, score.incorrect, 3)
 doubt.doubtLevel()
 print(doubt)
 

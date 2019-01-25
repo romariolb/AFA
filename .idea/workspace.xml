@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f2972196-1853-40aa-92b1-22efa3b516df" name="Default" comment="32_commit&#10;&#10;Alguns comentarios em codigo;&#10;Adição dos logs de 2018/2;">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="f2972196-1853-40aa-92b1-22efa3b516df" name="Default" comment="33_commit&#10;&#10;mudanças na estrutura da metrica score. agora ela passa como parametro a lista de corretas e incorretas.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/br/icomp/ufam/metrics/Confusion.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/metrics/Confusion.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/br/icomp/ufam/metrics/Deviation.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/metrics/Deviation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/br/icomp/ufam/metrics/Score.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/metrics/Score.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/br/icomp/ufam/metrics/WeightedScore.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/metrics/WeightedScore.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/br/icomp/ufam/parse/ParsePetriNet.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/parse/ParsePetriNet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/br/icomp/ufam/util/PNetExe.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/util/PNetExe.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/br/icomp/ufam/util/ParserGabarito.py" beforeDir="false" afterPath="$PROJECT_DIR$/br/icomp/ufam/util/ParserGabarito.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,8 +18,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="55" column="3" selection-start-line="55" selection-start-column="3" selection-end-line="55" selection-end-column="3" />
+            <state relative-caret-position="414">
+              <caret line="59" column="10" lean-forward="true" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
               <folding>
                 <element signature="e#39#49#0" expanded="true" />
               </folding>
@@ -36,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/Deviation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="82" column="32" lean-forward="true" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
+            <state relative-caret-position="408">
+              <caret line="83" column="14" selection-start-line="83" selection-start-column="14" selection-end-line="83" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -45,8 +39,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/WeightedScore.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-807">
-              <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+            <state relative-caret-position="60">
+              <caret line="27" column="19" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -63,7 +57,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/br/icomp/ufam/parse/ParsePetriNet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1112">
+            <state relative-caret-position="3196">
               <caret line="192" column="25" selection-start-line="192" selection-start-column="25" selection-end-line="192" selection-end-column="25" />
             </state>
           </provider>
@@ -90,7 +84,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/Score.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="833">
               <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
             </state>
           </provider>
@@ -144,13 +138,13 @@
         <option value="$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetPlace.py" />
         <option value="$PROJECT_DIR$/br/icomp/ufam/metrics/Doubt.py" />
         <option value="$PROJECT_DIR$/br/icomp/ufam/metrics/Confusion.py" />
-        <option value="$PROJECT_DIR$/br/icomp/ufam/metrics/Deviation.py" />
         <option value="$PROJECT_DIR$/br/icomp/ufam/util/ParserGabarito.py" />
         <option value="$PROJECT_DIR$/br/icomp/ufam/parse/ParsePetriNet.py" />
         <option value="$PROJECT_DIR$/br/icomp/ufam/util/PNetExe.py" />
-        <option value="$PROJECT_DIR$/Main.py" />
         <option value="$PROJECT_DIR$/br/icomp/ufam/metrics/Score.py" />
         <option value="$PROJECT_DIR$/br/icomp/ufam/metrics/WeightedScore.py" />
+        <option value="$PROJECT_DIR$/Main.py" />
+        <option value="$PROJECT_DIR$/br/icomp/ufam/metrics/Deviation.py" />
       </list>
     </option>
   </component>
@@ -168,6 +162,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -232,7 +227,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -634,7 +628,14 @@
       <option name="project" value="LOCAL" />
       <updated>1546916329991</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="33_commit&#10;&#10;mudanças na estrutura da metrica score. agora ela passa como parametro a lista de corretas e incorretas.">
+      <created>1548384798614</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1548384798614</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView">
@@ -720,7 +721,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="8_commit&#10;&#10;estrutura da rede pronta.&#10;erro ao montar a matriz de incidência&#10;  File &quot;C:\Users\romar\PycharmProjects\AFA\br\icomp\ufam\util\Matrix.py&quot;, line 48, in hasArcI&#10;    if place.node.id in arc.source and transition.node.id in arc.target:&#10;TypeError: argument of type 'PNetPlace' is not iterable" />
     <MESSAGE value="9_commit&#10;&#10;estrutura da rede pronta.&#10;Rede de petri sendo gerada e igual ao modelo gráfico.&#10;erro ao montar a matriz de incidência&#10;  File &quot;C:\Users\romar\PycharmProjects\AFA\br\icomp\ufam\util\Matrix.py&quot;, line 48, in hasArcI&#10;    if place.node.id in arc.source and transition.node.id in arc.target:&#10;TypeError: argument of type 'PNetPlace' is not iterable" />
     <MESSAGE value="10_commit&#10;&#10;estrutura da rede pronta.&#10;Rede de petri sendo gerada e igual ao modelo gráfico.&#10;Matriz de incidência gerada." />
     <MESSAGE value="11_commit&#10;&#10;estrutura da rede pronta.&#10;Rede de petri sendo gerada e igual ao modelo gráfico.&#10;Matriz de incidência gerada.&#10;entrada de arquivo de log por linha de comando." />
@@ -745,7 +745,8 @@
     <MESSAGE value="30_commit&#10;&#10;mudança na metrica de duvida, agora o nivel de duvida é o numero de marcacao - 1. 3 marcações -&gt; Nivel 2 de duvida." />
     <MESSAGE value="31_commit&#10;&#10;Criação da métrica de nivel de confusão." />
     <MESSAGE value="32_commit&#10;&#10;Alguns comentarios em codigo;&#10;Adição dos logs de 2018/2;" />
-    <option name="LAST_COMMIT_MESSAGE" value="32_commit&#10;&#10;Alguns comentarios em codigo;&#10;Adição dos logs de 2018/2;" />
+    <MESSAGE value="33_commit&#10;&#10;mudanças na estrutura da metrica score. agora ela passa como parametro a lista de corretas e incorretas." />
+    <option name="LAST_COMMIT_MESSAGE" value="33_commit&#10;&#10;mudanças na estrutura da metrica score. agora ela passa como parametro a lista de corretas e incorretas." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../ProjectEducation/lista_disciplina_enem">
@@ -1006,27 +1007,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Support/Files/logs-2018-2/3934.1D/gabaritoPCompreensao_3934.1D.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="7" selection-start-column="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetPlace.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/Deviation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="82" column="32" lean-forward="true" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/br/icomp/ufam/util/PNetExe.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -1041,6 +1021,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Support/Files/logs-2018-2/3934.1D/gabaritoPCompreensao_3934.1D.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/parse/ParsePetriNet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3196">
+          <caret line="192" column="25" selection-start-line="192" selection-start-column="25" selection-end-line="192" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/br/icomp/ufam/util/ParserGabarito.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -1048,34 +1042,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/parse/ParsePetriNet.py">
+    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetPlace.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1112">
-          <caret line="192" column="25" selection-start-line="192" selection-start-column="25" selection-end-line="192" selection-end-column="25" />
+        <state relative-caret-position="187">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/Score.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="55" column="3" selection-start-line="55" selection-start-column="3" selection-end-line="55" selection-end-column="3" />
+        <state relative-caret-position="414">
+          <caret line="59" column="10" lean-forward="true" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
           <folding>
             <element signature="e#39#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/Score.py">
+    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/Deviation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
+        <state relative-caret-position="408">
+          <caret line="83" column="14" selection-start-line="83" selection-start-column="14" selection-end-line="83" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/WeightedScore.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-807">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+        <state relative-caret-position="60">
+          <caret line="27" column="19" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="19" />
         </state>
       </provider>
     </entry>

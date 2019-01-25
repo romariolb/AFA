@@ -16,6 +16,7 @@ def findArcSource(question, net):
                 if a1.target[0] == a2.source[0]:  # transicao
                     if a2.target[1].deviation != d:
                         d = a2.target[1].deviation # o deviation vai de 0 a 4, soma os valores de deviation dividido pelo deviation maximo (qntd de questoes).
+                        # print(d)
                     else:
                         pass
                 else:
@@ -57,6 +58,7 @@ class WeightedScore:
 
     def listIncorrects(self):
         self.numIncorrects = len(self.incorrect)
+        # print(self.incorrect)
         """for i in range(1, self.numQuestions):
             if self.finalMark[i] == 0:
                 self.numIncorrects += 1
@@ -69,6 +71,7 @@ class WeightedScore:
             if q is not None:
                 d = findArcSource(q, self.net)
                 self.incorrect_dev.append([q[0], d])
+                # print('{}|{}'.format(q[0],d))
             else:
                 pass
 
@@ -82,7 +85,11 @@ class WeightedScore:
                 self.incorrect.append(findPlace(i, self.net))
             else:
                 pass"""
+        for q in self.corrects:
+            self.count += 4
+
         for d in self.incorrect_dev:
+            # print(d)
             self.count += d[1]
 
         self.score = float(10.0 * (float(self.count) / float(self.mp)))
