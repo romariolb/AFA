@@ -44,13 +44,13 @@ def sumMarking(marking, matrix, index):
 
 class PNetExe:
 
-    def __init__(self, matrix, numQuestions):
+    def __init__(self, matrix, numQuestions, n_f):
         """
 
         :param matrix: Matrix
         """
         self.matrix = matrix
-        self.numQuestions = numQuestions
+        self.numQuestions = numQuestions - n_f
         self.marking = []
         self.transitions = []
         self.index = 0
@@ -69,7 +69,7 @@ class PNetExe:
     def initMark(self):
         size = self.matrix.colunas
         print(str(size))
-        for i in range(0, size):
+        for i in range(size):
             if i == self.numQuestions:
                 self.marking.append(1)
             else:

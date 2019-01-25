@@ -92,19 +92,39 @@ def verify_deviation(question, answer, str_file):
         if question == int(q):
             if answer == 'A':
                 f_input.close()
-                return int(ra)
+                if ra != '0':
+                    return (int(ra))-1
+                else:
+                    return 0
+                # return int(ra)
             elif answer == 'B':
                 f_input.close()
-                return int(rb)
+                if rb != '0':
+                    return (int(rb))-1
+                else:
+                    return 0
+                # return int(rb)
             elif answer == 'C':
                 f_input.close()
-                return int(rc)
+                if rc != '0':
+                    return (int(rc))-1
+                else:
+                    return 0
+                # return int(rc)
             elif answer == 'D':
                 f_input.close()
-                return int(rd)
+                if rd != '0':
+                    return (int(rd))-1
+                else:
+                    return 0
+                # return int(rd)
             elif answer == 'E':
                 f_input.close()
-                return int(re)
+                if re != '0':
+                    return (int(re))-1
+                else:
+                    return 0
+                # return int(re)
             else:
                 f_input.close()
                 return 0
@@ -169,8 +189,9 @@ class ParsePetriNet:
         posicoes do vetor.
         """
         for item in answers:
-            indice = answers.index(item) + 1
-            Nome = 'Q' + str(indice) + 'V'
+            # indice = answers.index(item) + 1
+            Nome = item[2] + 'V'
+            print(Nome)
             p = PNetPlace(Nome, None, None, None, None)
             t = [Nome, p]
 
@@ -225,9 +246,9 @@ class ParsePetriNet:
                 """
                 Leitura dos componentes do .csv para atribuicao aos objetos
                 """
-                self.student = linha[2]
-                TEMPO = linha[3]
-                foco = linha[6]
+                self.student = linha[6]
+                TEMPO = linha[7]
+                foco = linha[10]
                 tmp = foco.split(':')
                 QUESTAO = str(tmp[0] + tmp[1])
                 q_n = int(tmp[1])
@@ -263,6 +284,7 @@ class ParsePetriNet:
                 if verify != 0:
                     pair1 = verify
                 else:
+                    # print(placeQ.id)
                     self.net.addPlace(pair1)
 
                 placeR = PNetPlace(RESPOSTA, None, None, None, TEMPO)

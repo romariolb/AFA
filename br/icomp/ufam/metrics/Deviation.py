@@ -36,7 +36,7 @@ def findArcSource(question, net):
 
 
 class Deviation:
-    def __init__(self, marking, numQuestions, net, score):
+    def __init__(self, marking, numQuestions, net, score, n_f, w_s, incorrect):
         """
 
         :type score: Score
@@ -45,17 +45,17 @@ class Deviation:
         :param numQuestions: int
         """
         self.finalMark = marking
-        self.numQuestions = numQuestions - 5
+        self.numQuestions = numQuestions - n_f
         self.net = net
         self.numIncorrects = 0
         self.incorrect_dev = []
-        self.incorrect = []
+        self.incorrect = incorrect
         self.scoreP = score
-        self.scoreWS = float
+        self.scoreWS = w_s
         self.scoreD = float
 
     def __str__(self):
-        text = 'Voce errou {} de {} questoes \n'.format(self.numIncorrects - 5,
+        text = 'Voce errou {} de {} questoes \n'.format(self.numIncorrects,
                                                         self.numQuestions)
         """text += 'ERRADAS: \n'
         for i in self.incorrect:
@@ -70,16 +70,18 @@ class Deviation:
         return text
 
     def listIncorrects(self):
-        for i in range(1, self.numQuestions):
+        self.numIncorrects = len(self.incorrect)
+        """for i in range(1, self.numQuestions):
             if self.finalMark[i] == 0:
                 self.numIncorrects += 1
                 self.incorrect.append(findPlace(i, self.net))
             else:
-                pass
+                pass"""
         # self.score = float((10.0 / self.numQuestions) * self.numCorrects)
 
     def mapQuest(self):
         for q in self.incorrect:
+            print(str(q))
             if q is not None:
                 d = findArcSource(q, self.net)
                 self.incorrect_dev.append([q[0], d])
@@ -105,8 +107,8 @@ class Deviation:
         soma += (4 * tam)
         # print('soma ', soma)
 
-        temp = 4 * self.numQuestions
+        # temp = 4 * self.numQuestions
         # print('temp ', temp)
 
-        self.scoreWS = float(float(soma) / float(temp)) * 10.0
+        # self.scoreWS = float(float(soma) / float(temp)) * 10.0
         self.scoreD = float(10.0 - float(self.scoreWS)) * 10.0

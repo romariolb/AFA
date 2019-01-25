@@ -23,11 +23,14 @@ class Confusion:
         # print(str(self.incorrect))
         for i in range(len(self.corrects)):
             self.corrects[i].append(self.corrects[i][1].count)
+            print("1 lugar correto")
         for j in range(len(self.incorrect)):
             if self.incorrect[j] is not None:
                 self.incorrect[j].append(self.incorrect[j][1].count)
+                print("1 lugar incorreto")
             else:
                 self.incorrect[j] = [0, 0, 0]
+                print("1 lugar vazio")
         for item in self.corrects:
             self.sum += item[2]
         for item in self.incorrect:

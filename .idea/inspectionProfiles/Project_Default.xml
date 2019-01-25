@@ -17,6 +17,7 @@
           <option value="PNetPlace" />
           <option value="PNetTransition" />
           <option value="PNetArc" />
+          <option value="sys" />
         </list>
       </option>
     </inspection_tool>

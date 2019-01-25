@@ -8,21 +8,21 @@ def parseLog(str_file):
     count = 0
     for line in f_input:
         count += 1
-        out = "Q" + str(count)
         q, ra, rb, rc, rd, re, d1, d2, d3, t = line.replace("\n", "").split(" ")
-        if int(ra) == 4:
-            out = out + "A"
-        elif int(rb) == 4:
-            out = out + "B"
-        elif int(rc) == 4:
-            out = out + "C"
-        elif int(rd) == 4:
-            out = out + "D"
-        elif int(re) == 4:
-            out = out + "E"
+        out1 = "Q" + q
+        if ra == '5':
+            out2 = out1 + "A"
+        elif rb == '5':
+            out2 = out1 + "B"
+        elif rc == '5':
+            out2 = out1 + "C"
+        elif rd == '5':
+            out2 = out1 + "D"
+        elif re == '5':
+            out2 = out1 + "E"
         else:
-            out = out + "X"
-        gabList.append([out, t])
+            out2 = out1 + "X"
+        gabList.append([out2, t, out1])
         # print(out,t)
 
     f_input.close()

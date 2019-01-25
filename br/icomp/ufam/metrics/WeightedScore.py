@@ -25,7 +25,7 @@ def findArcSource(question, net):
     return d
 
 class WeightedScore:
-    def __init__(self, marking, numQuestions, net):
+    def __init__(self, marking, numQuestions, net, n_f, correct, incorrect):
         """
 
         :type net: PNet
@@ -33,19 +33,19 @@ class WeightedScore:
         :param numQuestions: int
         """
         self.finalMark = marking
-        self.numQuestions = numQuestions - 5
+        self.numQuestions = numQuestions - n_f
         self.net = net
         self.numCorrects = 0
         self.numIncorrects = 0
-        self.corrects = []
-        self.incorrect = []
+        self.corrects = correct
+        self.incorrect = incorrect
         self.incorrect_dev = []
         self.mp = self.numQuestions * 4
         self.count = 0
         self.score = 0
 
     def __str__(self):
-        text = 'Voce conseguiu acertar {} de {} questoes e sua NOTA PONDERADA foi de {} pontos\n'.format(self.numCorrects,
+        text = 'Voce conseguiu acertar {} de {} questoes e sua NOTA PONDERADA foi de {} pontos\n'.format(len(self.corrects),
                                                                                                     self.numQuestions,
                                                                                                     round(self.score, 2))
         """text += 'ACERTADAS: \n'
@@ -56,12 +56,13 @@ class WeightedScore:
         return text
 
     def listIncorrects(self):
-        for i in range(1, self.numQuestions):
+        self.numIncorrects = len(self.incorrect)
+        """for i in range(1, self.numQuestions):
             if self.finalMark[i] == 0:
                 self.numIncorrects += 1
                 self.incorrect.append(findPlace(i, self.net))
             else:
-                pass
+                pass"""
 
     def mapQuest(self):
         for q in self.incorrect:
@@ -72,15 +73,20 @@ class WeightedScore:
                 pass
 
     def calculus(self):
-        for i in range(self.numQuestions):
-            if self.finalMark[i] != 0:
+        """for i in range(self.numQuestions):
+            if self.finalMark[i] != 0 and i != self.finalMark.index(self.finalMark[-1]): # exclui o SS
                 self.numCorrects += 1
                 self.corrects.append(findPlace(i, self.net))
                 self.count += 4 # findPlace(i, self.net)[1].deviation
-            else:
+            elif self.finalMark[i] == 0:
                 self.incorrect.append(findPlace(i, self.net))
+            else:
+                pass"""
         for d in self.incorrect_dev:
             self.count += d[1]
 
         self.score = float(10.0 * (float(self.count) / float(self.mp)))
+
+    def getScore(self):
+        return self.score
 
