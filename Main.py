@@ -7,6 +7,7 @@ from br.icomp.ufam.parse.ParsePetriNet import ParsePetriNet
 from br.icomp.ufam.util.Matrix import Matrix
 from br.icomp.ufam.util.PNetExe import PNetExe
 from br.icomp.ufam.util.ParserGabarito import parseLog
+from br.icomp.ufam.util.BuildFiles import BuildFiles
 from br.icomp.ufam.metrics.Score import Score
 from br.icomp.ufam.metrics.WeightedScore import WeightedScore
 from br.icomp.ufam.metrics.Doubt import Doubt
@@ -20,13 +21,20 @@ n_f = int(sys.argv[4]) #numero de questoes faltantes
 answers_list = parseLog(str(gab))
 net = ParsePetriNet(str(gab)).parse_csv_file(str(log), answers_list)
 
-print(net)
+full_log = BuildFiles()
+full_log.create_list(sys.argv[5])
+print('teste de log \n')
+print(full_log)
+print('\n')
+full_log.create_files()
+
+"""print(net)
 
 matrix = Matrix(net)
 matrix.setMatrixI()
 matrix.setMatrixO()
 matrix.setMatrixD()
-# print(matrix)
+#print(matrix)
 
 exe = PNetExe(matrix, int(n_q), n_f)
 exe.initMark()
@@ -59,7 +67,7 @@ dev.mapQuest()
 dev.calculus()
 print(dev)
 
-print('\n=================NIVEL DE DUVIDA===================\n')
+print('\n=================NIVEL DE DUVIDA===================\n')"""
 
 """doubt = Doubt(score.corrects, score.incorrect, 3)
 doubt.doubtLevel()
