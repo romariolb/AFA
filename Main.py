@@ -50,6 +50,15 @@ for path in files:
     correct = score.getCorrects()
     incorrect = score.getIncorrect()
 
+    print('\n=================NOTA PONDERADA===================\n')
+
+    w_score = WeightedScore(exe.marking, n_q, net, n_f, correct, incorrect)
+    w_score.listIncorrects()
+    w_score.mapQuest()
+    w_score.calculus()
+    print(w_score)
+    w_s = w_score.getScore()
+
 # TESTE DE PARSER
 """log = sys.argv[1] #log
 gab = sys.argv[2] #gabarito
