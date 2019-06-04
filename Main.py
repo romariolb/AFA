@@ -1,4 +1,4 @@
-#import sys  # argv for test file path
+# import sys  # argv for test file path
 import sys
 from collections import OrderedDict
 
@@ -15,9 +15,9 @@ from br.icomp.ufam.metrics.Confusion import Confusion
 
 full_log = BuildFiles(sys.argv[1])
 full_log.create_list()
-print('teste de log \n')
+"""print('teste de log \n')
 print(full_log)
-print('\n')
+print('\n')"""
 full_log.create_files()
 full_log.fill_files()
 
@@ -57,8 +57,6 @@ n_q = sys.argv[3] #numero de questoes
 n_f = int(sys.argv[4]) #numero de questoes faltantes
 answers_list = parseLog(str(gab))
 net = ParsePetriNet(str(gab)).parse_csv_file(str(log), answers_list)"""
-
-
 
 """print(net)
 

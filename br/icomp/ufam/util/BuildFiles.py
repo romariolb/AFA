@@ -1,6 +1,8 @@
 import csv
+import sys
 import re
 import os
+import time
 
 
 class BuildFiles:
@@ -15,6 +17,17 @@ class BuildFiles:
         for i in self.listStudents:
             text += str(i) + ' '
         return text
+
+    def progress_bar(self, value, max, barsize):
+        chars = int(value * barsize / float(max))
+        percent = int((value / float(max)) * 100)
+        sys.stdout.write("" * chars)
+        sys.stdout.write("" * (barsize - chars + 2))
+        if value >= max:
+            sys.stdout.write("done. \n\n")
+        else:
+            sys.stdout.write("[%3i%%]\r" % (percent))
+            sys.stdout.flush()
 
     def create_list(self):
         with open(self.log, 'r') as log:
@@ -51,14 +64,20 @@ class BuildFiles:
         return file_log
 
     def create_files(self):
+        print('Creating the log files')
+        tam_progress = len(self.listStudents)
         for i in self.listStudents:
+            self.progress_bar(self.listStudents.index(i), tam_progress, 30)
             file_log = self.verify_file(str(i))
+            time.sleep(0.2)
             # print('File ' + file_log + ' was created.\n')
 
     def fill_files(self):
-        print('Building the individual\'s log')
+        print('Filling the individual\'s log')
+        tam_progress = len(self.listStudents)
         for i in self.listStudents:
             # print('.')
+            self.progress_bar(self.listStudents.index(i), tam_progress, 30)
             name_file_w = './logs/' + str(i) + '.csv'
             file_w = open(name_file_w, 'w')
             file_r = open(self.log, 'r')
@@ -87,6 +106,7 @@ class BuildFiles:
                             writer.writerow(dh)
                         else:
                             pass
+            time.sleep(0.2)
             file_w.close()
             file_r.close()
 
