@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="f2972196-1853-40aa-92b1-22efa3b516df" name="Default" comment="34_commit&#10;&#10;mudanças na estrutura da metrica score ponderado e desvio. precisa verificaar o motivo de estar pulando duas questões, sendo que elas são listadas nos parametros iniciais.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
     <list default="true" id="f2972196-1853-40aa-92b1-22efa3b516df" name="Default" comment="33_commit&#10;&#10;mudanças na estrutura da metrica score. agora ela passa como parametro a lista de corretas e incorretas.">
       <change afterPath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/br/icomp/ufam/util/BuildFiles.py" afterDir="false" />
@@ -9,6 +13,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Support/Files/logs-2018-2/3934.1D-CSV/2017139340322.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Support/Files/logs-2018-2/3934.1D-CSV/2017139340322.csv" afterDir="false" />
+>>>>>>> 09e4389a7fd90a61da19d797a3323ccbf65971bc
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +22,85 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="816">
+              <caret line="59" column="10" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
+              <folding>
+                <element signature="e#39#49#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/Deviation.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1411">
+              <caret line="83" column="14" selection-start-line="83" selection-start-column="14" selection-end-line="83" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/WeightedScore.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="32" column="28" lean-forward="true" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Support/Files/logs-2018-2/3934.1D/gabaritoPCompreensao_3934.1D.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="7" selection-start-column="7" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/br/icomp/ufam/parse/ParsePetriNet.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3196">
+              <caret line="192" column="25" selection-start-line="192" selection-start-column="25" selection-end-line="192" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/br/icomp/ufam/util/ParserGabarito.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/br/icomp/ufam/petrinet/PNetPlace.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/Score.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="833">
+              <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+=======
     <splitter split-orientation="horizontal" split-proportion="0.3625954">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -138,6 +222,7 @@
         </leaf>
       </split-second>
     </splitter>
+>>>>>>> 09e4389a7fd90a61da19d797a3323ccbf65971bc
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -685,7 +770,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548384798614</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="34_commit&#10;&#10;mudanças na estrutura da metrica score ponderado e desvio. precisa verificaar o motivo de estar pulando duas questões, sendo que elas são listadas nos parametros iniciais.">
+      <created>1548445582012</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1548445582012</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TodoView">
@@ -698,10 +790,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992743" visible="true" weight="0.23712021" />
+=======
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992743" visible="true" weight="0.16204691" />
+>>>>>>> 09e4389a7fd90a61da19d797a3323ccbf65971bc
       <window_info id="Structure" order="1" sideWeight="0.5007257" side_tool="true" weight="0.13417052" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -711,10 +809,17 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.329429" />
+<<<<<<< HEAD
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.36695907" />
+      <window_info anchor="bottom" id="Python Console" order="8" weight="0.32796487" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49834764" weight="0.32748538" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50165236" side_tool="true" weight="0.32796487" />
+=======
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49840087" visible="true" weight="0.37919825" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.32719395" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49834764" weight="0.32796487" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50159913" side_tool="true" weight="0.37919825" />
+>>>>>>> 09e4389a7fd90a61da19d797a3323ccbf65971bc
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -773,7 +878,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="9_commit&#10;&#10;estrutura da rede pronta.&#10;Rede de petri sendo gerada e igual ao modelo gráfico.&#10;erro ao montar a matriz de incidência&#10;  File &quot;C:\Users\romar\PycharmProjects\AFA\br\icomp\ufam\util\Matrix.py&quot;, line 48, in hasArcI&#10;    if place.node.id in arc.source and transition.node.id in arc.target:&#10;TypeError: argument of type 'PNetPlace' is not iterable" />
     <MESSAGE value="10_commit&#10;&#10;estrutura da rede pronta.&#10;Rede de petri sendo gerada e igual ao modelo gráfico.&#10;Matriz de incidência gerada." />
     <MESSAGE value="11_commit&#10;&#10;estrutura da rede pronta.&#10;Rede de petri sendo gerada e igual ao modelo gráfico.&#10;Matriz de incidência gerada.&#10;entrada de arquivo de log por linha de comando." />
     <MESSAGE value="12_commit&#10;&#10;estrutura da rede pronta.&#10;Rede de petri sendo gerada e igual ao modelo gráfico.&#10;Matriz de incidência pausada.&#10;entrada de arquivo de log por linha de comando.&#10;Demora excessiva para gerar lugares e em lista! Corrigir. Está sendo realizado por um laço for." />
@@ -798,7 +902,8 @@
     <MESSAGE value="31_commit&#10;&#10;Criação da métrica de nivel de confusão." />
     <MESSAGE value="32_commit&#10;&#10;Alguns comentarios em codigo;&#10;Adição dos logs de 2018/2;" />
     <MESSAGE value="33_commit&#10;&#10;mudanças na estrutura da metrica score. agora ela passa como parametro a lista de corretas e incorretas." />
-    <option name="LAST_COMMIT_MESSAGE" value="33_commit&#10;&#10;mudanças na estrutura da metrica score. agora ela passa como parametro a lista de corretas e incorretas." />
+    <MESSAGE value="34_commit&#10;&#10;mudanças na estrutura da metrica score ponderado e desvio. precisa verificaar o motivo de estar pulando duas questões, sendo que elas são listadas nos parametros iniciais." />
+    <option name="LAST_COMMIT_MESSAGE" value="34_commit&#10;&#10;mudanças na estrutura da metrica score ponderado e desvio. precisa verificaar o motivo de estar pulando duas questões, sendo que elas são listadas nos parametros iniciais." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/petrinet.py" />
@@ -961,6 +1066,25 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="59" column="10" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
+          <folding>
+            <element signature="e#39#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/Deviation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1411">
+          <caret line="83" column="14" selection-start-line="83" selection-start-column="14" selection-end-line="83" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+=======
     <entry file="file://$PROJECT_DIR$/Support/Files/logs-2018-2/3934.1D/3934.1D.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -990,6 +1114,7 @@
       </provider>
       <provider selected="true" editor-type-id="csv-text-editor" />
     </entry>
+>>>>>>> 09e4389a7fd90a61da19d797a3323ccbf65971bc
     <entry file="file://$PROJECT_DIR$/Support/Files/logs-2018-2/3934.1D/gabaritoPCompreensao_3934.1D.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1068,6 +1193,12 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/WeightedScore.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="32" column="28" lean-forward="true" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
+=======
     <entry file="file://$PROJECT_DIR$/br/icomp/ufam/metrics/Deviation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -1089,6 +1220,7 @@
           <folding>
             <element signature="e#39#49#0" expanded="true" />
           </folding>
+>>>>>>> 09e4389a7fd90a61da19d797a3323ccbf65971bc
         </state>
       </provider>
     </entry>

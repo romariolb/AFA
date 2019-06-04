@@ -21,12 +21,13 @@ n_f = int(sys.argv[4]) #numero de questoes faltantes
 answers_list = parseLog(str(gab))
 net = ParsePetriNet(str(gab)).parse_csv_file(str(log), answers_list)
 
-full_log = BuildFiles()
-full_log.create_list(sys.argv[5])
+full_log = BuildFiles(sys.argv[5])
+full_log.create_list()
 print('teste de log \n')
 print(full_log)
 print('\n')
 full_log.create_files()
+full_log.fill_files()
 
 """print(net)
 
