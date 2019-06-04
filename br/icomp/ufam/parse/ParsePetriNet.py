@@ -60,6 +60,7 @@ def hasIn_gabList(pair, answers):
     """
     for item in answers:
         if pair[0] == item[0]:
+            # print('igual\n')
             return 1
     return 0
 
@@ -93,35 +94,35 @@ def verify_deviation(question, answer, str_file):
             if answer == 'A':
                 f_input.close()
                 if ra != '0':
-                    return (int(ra))-1
+                    return int(ra)
                 else:
                     return 0
                 # return int(ra)
             elif answer == 'B':
                 f_input.close()
                 if rb != '0':
-                    return (int(rb))-1
+                    return int(rb)
                 else:
                     return 0
                 # return int(rb)
             elif answer == 'C':
                 f_input.close()
                 if rc != '0':
-                    return (int(rc))-1
+                    return int(rc)
                 else:
                     return 0
                 # return int(rc)
             elif answer == 'D':
                 f_input.close()
                 if rd != '0':
-                    return (int(rd))-1
+                    return int(rd)
                 else:
                     return 0
                 # return int(rd)
             elif answer == 'E':
                 f_input.close()
                 if re != '0':
-                    return (int(re))-1
+                    return int(re)
                 else:
                     return 0
                 # return int(re)
@@ -191,7 +192,7 @@ class ParsePetriNet:
         for item in answers:
             # indice = answers.index(item) + 1
             Nome = item[2] + 'V'
-            print(Nome)
+            # print(Nome)
             p = PNetPlace(Nome, None, None, None, None)
             t = [Nome, p]
 

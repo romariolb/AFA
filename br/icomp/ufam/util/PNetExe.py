@@ -146,4 +146,5 @@ class PNetExe:
             self.calculation()
 
         else:
-            print('!!!!!!!!\n ' + str(self.marking))
+            pass
+            # print('Final Marking\n ' + str(self.marking))

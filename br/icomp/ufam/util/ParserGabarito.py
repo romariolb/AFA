@@ -10,19 +10,19 @@ def parseLog(str_file):
         count += 1
         q, ra, rb, rc, rd, re, d1, d2, d3, t = line.replace("\n", "").split(" ")
         out1 = "Q" + q
-        if ra == '5':
+        if ra == '4':
             out2 = out1 + "A"
-        elif rb == '5':
+        elif rb == '4':
             out2 = out1 + "B"
-        elif rc == '5':
+        elif rc == '4':
             out2 = out1 + "C"
-        elif rd == '5':
+        elif rd == '4':
             out2 = out1 + "D"
-        elif re == '5':
+        elif re == '4':
             out2 = out1 + "E"
         else:
             out2 = out1 + "X"
-        gabList.append([out2, t, out1])
+        gabList.append([out2, int(t), out1])
         # print(out,t)
 
     f_input.close()

@@ -39,11 +39,11 @@ class Score:
                                                                                                     round(self.score, 2))
         text += 'ACERTADAS: \n'
         for i in self.corrects:
-            text += str(i) + '\n'
+            text += str(i[0]) + '\n'
 
-        text += 'ERRADAS: \n'
+        """text += 'ERRADAS: \n'
         for i in self.incorrect:
-            text += str(i) + '\n'
+            text += str(i[0]) + '\n'"""
         return text
 
     def calculus(self):

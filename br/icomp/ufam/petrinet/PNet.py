@@ -67,16 +67,15 @@ class PNet:
     def __str__(self):
         text = '--- Net:'
         text += str(self.id) + '\n'
-        text += '\nTransitions:\n'
+        """text += '\nTransitions:\n'
         for transition in self.listT:
             text += str(transition[1].name) + ' | ' + str(transition[1].preBinding) + '\n'
-        """
         text += '\nPlaces:\n'
         for place in self.listP:
-            text += str(place[0]) + ' ' + str(place[1].count) + '\n' """
+            text += str(place[0]) + ' ' + str(place[1].count) + '\n'
         text += '\nArcos:\n'
         for edge in self.listA:
-            text += str(edge) + '\n'
+            text += str(edge) + '\n'"""
         text += '---'
 
         return text

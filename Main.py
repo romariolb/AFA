@@ -13,21 +13,52 @@ from br.icomp.ufam.metrics.WeightedScore import WeightedScore
 from br.icomp.ufam.metrics.Doubt import Doubt
 from br.icomp.ufam.metrics.Confusion import Confusion
 
-# TESTE DE PARSER
-log = sys.argv[1] #log
-gab = sys.argv[2] #gabarito
-n_q = sys.argv[3] #numero de questoes
-n_f = int(sys.argv[4]) #numero de questoes faltantes
-answers_list = parseLog(str(gab))
-net = ParsePetriNet(str(gab)).parse_csv_file(str(log), answers_list)
-
-full_log = BuildFiles(sys.argv[5])
+full_log = BuildFiles(sys.argv[1])
 full_log.create_list()
 print('teste de log \n')
 print(full_log)
 print('\n')
 full_log.create_files()
 full_log.fill_files()
+
+gab = sys.argv[2]  # gabarito
+n_q = int(sys.argv[3])  # numero de questoes
+n_f = int(sys.argv[4])  # numero de questoes faltantes
+answers_list = parseLog(str(gab))
+
+# for a in answers_list:
+#    print(a)
+
+files = full_log.findFiles('./logs', '.csv')
+for path in files:
+    log = path  # log
+    net = ParsePetriNet(str(gab)).parse_csv_file(str(log), answers_list)
+    print(net)
+    matrix = Matrix(net)
+    matrix.setMatrixI()
+    matrix.setMatrixO()
+    matrix.setMatrixD()
+    # print(matrix)
+    exe = PNetExe(matrix, n_q, n_f)
+    exe.initMark()
+    exe.calculation()
+    print('\n=================PONTUACAO TRADICIONAL===================\n')
+
+    score = Score(exe.marking, int(n_q), net, n_f, answers_list)
+    score.calculus()
+    print(score)
+    correct = score.getCorrects()
+    incorrect = score.getIncorrect()
+
+# TESTE DE PARSER
+"""log = sys.argv[1] #log
+gab = sys.argv[2] #gabarito
+n_q = sys.argv[3] #numero de questoes
+n_f = int(sys.argv[4]) #numero de questoes faltantes
+answers_list = parseLog(str(gab))
+net = ParsePetriNet(str(gab)).parse_csv_file(str(log), answers_list)"""
+
+
 
 """print(net)
 

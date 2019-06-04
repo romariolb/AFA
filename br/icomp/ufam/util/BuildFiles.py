@@ -53,7 +53,7 @@ class BuildFiles:
     def create_files(self):
         for i in self.listStudents:
             file_log = self.verify_file(str(i))
-            print('File ' + file_log + ' was created.\n')
+            # print('File ' + file_log + ' was created.\n')
 
     def fill_files(self):
         print('Building the individual\'s log')
@@ -89,4 +89,11 @@ class BuildFiles:
                             pass
             file_w.close()
             file_r.close()
+
+    def findFiles(self, folder, type):
+        files = []
+        pathAbs = os.path.abspath(folder)
+        for actualFolder, subFolder, files_s in os.walk(pathAbs):
+            files.extend([os.path.join(actualFolder, file) for file in files_s if file.endswith(type)])
+        return files
 
