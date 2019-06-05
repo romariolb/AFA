@@ -59,52 +59,16 @@ for path in files:
     print(w_score)
     w_s = w_score.getScore()
 
+    print('\n=================PERCENTUAL DE DESVIO===================\n')
+
+    dev = Deviation(exe.marking, int(n_q), net, score, n_f, w_s, incorrect)
+    dev.listIncorrects()
+    dev.mapQuest()
+    dev.calculus()
+    print(dev)
+
 # TESTE DE PARSER
-"""log = sys.argv[1] #log
-gab = sys.argv[2] #gabarito
-n_q = sys.argv[3] #numero de questoes
-n_f = int(sys.argv[4]) #numero de questoes faltantes
-answers_list = parseLog(str(gab))
-net = ParsePetriNet(str(gab)).parse_csv_file(str(log), answers_list)"""
-
-"""print(net)
-
-matrix = Matrix(net)
-matrix.setMatrixI()
-matrix.setMatrixO()
-matrix.setMatrixD()
-#print(matrix)
-
-exe = PNetExe(matrix, int(n_q), n_f)
-exe.initMark()
-print(exe)
-exe.calculation()
-print(exe)
-
-print('\n=================PONTUACAO TRADICIONAL===================\n')
-
-score = Score(exe.marking, int(n_q), net, n_f, answers_list)
-score.calculus()
-print(score)
-correct = score.getCorrects()
-incorrect = score.getIncorrect()
-
-print('\n=================NOTA PONDERADA===================\n')
-
-w_score = WeightedScore(exe.marking, int(n_q), net, n_f, correct, incorrect)
-w_score.listIncorrects()
-w_score.mapQuest()
-w_score.calculus()
-print(w_score)
-w_s = w_score.getScore()
-
-print('\n=================PERCENTUAL DE DESVIO===================\n')
-
-dev = Deviation(exe.marking, int(n_q), net, score, n_f, w_s, incorrect)
-dev.listIncorrects()
-dev.mapQuest()
-dev.calculus()
-print(dev)
+"""
 
 print('\n=================NIVEL DE DUVIDA===================\n')"""
 
