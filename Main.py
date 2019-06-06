@@ -52,12 +52,19 @@ for student in listStudents:
     w_score.mapQuest()
     w_score.calculus()
     w_s = w_score.getScore()
+    # desvio
+    dev = Deviation(exe.marking, int(n_q), net, score, n_f, w_s, incorrect)
+    dev.listIncorrects()
+    dev.mapQuest()
+    dev.calculus()
 
     print(net)
     print('\n==PONTUACAO TRADICIONAL==\n')
     print(score)
     print('\n==NOTA PONDERADA==\n')
     print(w_score)
+    print('\n==PERCENTUAL DE DESVIO==\n')
+    print(dev)
 
 
 
