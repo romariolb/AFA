@@ -39,7 +39,7 @@ class Score:
                                                                                                     round(self.score, 2))
         text += 'ACERTADAS: \n'
         for i in self.corrects:
-            text += str(i[0]) + '\n'
+            text += str(i[0]) + '\t'
 
         """text += 'ERRADAS: \n'
         for i in self.incorrect:

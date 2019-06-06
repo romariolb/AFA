@@ -41,20 +41,21 @@ class BuildFiles:
                     pass
         log.close()
 
+        return self.listStudents
         # print(self.listStudents)
 
-    def verify_file(self, log):
-        dir = './logs'
+    def verify_file(self, student):
+        dir = './logs/' + student
         if not os.path.exists(dir):
             os.makedirs(dir)
         elif not os.path.isdir(dir):
             raise IOError(dir + " isn't a path!")
 
         for file in dir:
-            if file == str(log) + '.csv':
+            if file == str(student) + '.csv':
                 os.remove(file)
 
-        file_log = dir + '/' + str(log) + '.csv'
+        file_log = dir + '/' + str(student) + '.csv'
 
         if not os.path.exists(file_log):
             with open(file_log, 'w') as file:
@@ -78,7 +79,7 @@ class BuildFiles:
         for i in self.listStudents:
             # print('.')
             self.progress_bar(self.listStudents.index(i), tam_progress, 30)
-            name_file_w = './logs/' + str(i) + '.csv'
+            name_file_w = './logs/' + str(i) + '/' + str(i) + '.csv'
             file_w = open(name_file_w, 'w')
             file_r = open(self.log, 'r')
 

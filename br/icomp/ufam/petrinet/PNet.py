@@ -65,7 +65,7 @@ class PNet:
     """
 
     def __str__(self):
-        text = '--- Net:'
+        text = '\n--- Net:'
         text += str(self.id) + '\n'
         """text += '\nTransitions:\n'
         for transition in self.listT:

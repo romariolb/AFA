@@ -14,7 +14,7 @@ from br.icomp.ufam.metrics.Doubt import Doubt
 from br.icomp.ufam.metrics.Confusion import Confusion
 
 full_log = BuildFiles(sys.argv[1])
-full_log.create_list()
+listStudents = full_log.create_list()
 """print('teste de log \n')
 print(full_log)
 print('\n')"""
@@ -29,7 +29,39 @@ answers_list = parseLog(str(gab))
 # for a in answers_list:
 #    print(a)
 
-files = full_log.findFiles('./logs', '.csv')
+for student in listStudents:
+    file = full_log.findFiles('./logs/' + str(student), '.csv')
+    # print(file)
+    net = ParsePetriNet(str(gab)).parse_csv_file(str(file[0]), answers_list)
+    matrix = Matrix(net)
+    matrix.setMatrixI()
+    matrix.setMatrixO()
+    matrix.setMatrixD()
+    # print(matrix)
+    exe = PNetExe(matrix, n_q, n_f)
+    exe.initMark()
+    exe.calculation()
+    # Score
+    score = Score(exe.marking, int(n_q), net, n_f, answers_list)
+    score.calculus()
+    correct = score.getCorrects()
+    incorrect = score.getIncorrect()
+    # w_score
+    w_score = WeightedScore(exe.marking, n_q, net, n_f, correct, incorrect)
+    w_score.listIncorrects()
+    w_score.mapQuest()
+    w_score.calculus()
+    w_s = w_score.getScore()
+
+    print(net)
+    print('\n==PONTUACAO TRADICIONAL==\n')
+    print(score)
+    print('\n==NOTA PONDERADA==\n')
+    print(w_score)
+
+
+
+"""files = full_log.findFiles('./logs', '.csv')
 for path in files:
     log = path  # log
     net = ParsePetriNet(str(gab)).parse_csv_file(str(log), answers_list)
@@ -66,6 +98,12 @@ for path in files:
     dev.mapQuest()
     dev.calculus()
     print(dev)
+
+    print('\n=================NIVEL DE DUVIDA===================\n')
+
+    doubt = Doubt(score.corrects, score.incorrect, 3)
+    doubt.doubtLevel()
+    print(doubt)"""
 
 # TESTE DE PARSER
 """
