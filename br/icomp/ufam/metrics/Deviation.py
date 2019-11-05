@@ -25,7 +25,7 @@ def findArcSource(question, net):
             for a2 in net.listA:
                 if a1.target[0] == a2.source[0]:  # transicao
                     if a2.target[1].deviation != d:
-                        d = a2.target[1].deviation # o deviation vai de 0 a 4, soma os valores de deviation dividido pelo deviation maximo (qntd de questoes).
+                        d = a2.target[1].deviation #o deviation vai de 0 a 4, soma os valores de deviation dividido pelo deviation maximo (qntd de questoes).
                     else:
                         pass
                 else:

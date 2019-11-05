@@ -57,9 +57,6 @@ for student in listStudents:
     dev.listIncorrects()
     dev.mapQuest()
     dev.calculus()
-    # duvida
-    doubt = Doubt(score.corrects, score.incorrect, 3)
-    doubt.doubtLevel()
 
     print(net)
     print('\n==PONTUACAO TRADICIONAL==\n')
@@ -68,8 +65,7 @@ for student in listStudents:
     print(w_score)
     print('\n==PERCENTUAL DE DESVIO==\n')
     print(dev)
-    print('\n==NIVEL DE DUVIDA==\n')
-    print(doubt)
+
 
 
 """files = full_log.findFiles('./logs', '.csv')
