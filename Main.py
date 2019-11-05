@@ -1,6 +1,9 @@
 # import sys  # argv for test file path
 import sys
+import csv
 from collections import OrderedDict
+
+# python Main.py Support/Files/logs-2018-2/3934.1D/SERVICE_log_3934.1D.csv Support/Files/logs-2018-2/3934.1D/gabaritoPCompreensao_3934.1D.txt 44 4
 
 from br.icomp.ufam.metrics.Deviation import Deviation
 from br.icomp.ufam.parse.ParsePetriNet import ParsePetriNet
@@ -28,6 +31,8 @@ answers_list = parseLog(str(gab))
 
 # for a in answers_list:
 #    print(a)
+
+export = csv.writer(open("Report.csv", "wb"))
 
 for student in listStudents:
     file = full_log.findFiles('./logs/' + str(student), '.csv')
@@ -57,14 +62,26 @@ for student in listStudents:
     dev.listIncorrects()
     dev.mapQuest()
     dev.calculus()
+    #duvida
+    doubt = Doubt(score.corrects, score.incorrect, 3)
+    doubt.doubtLevel()
 
-    print(net)
+    """print(net)
     print('\n==PONTUACAO TRADICIONAL==\n')
     print(score)
     print('\n==NOTA PONDERADA==\n')
     print(w_score)
     print('\n==PERCENTUAL DE DESVIO==\n')
     print(dev)
+    print('\n==NIVEL DE DUVIDA==\n')
+    print(doubt)"""
+
+    """
+        FORMAT REPORT.CSV
+        id_student, score, weight_score, deviation_level, most_correct_question_doubt - value : most_incorrect_question_doubt - value
+    """
+
+    export.writerow([str(student), str(score.score), str(w_score.score), str(dev.scoreD), str(doubt.orderedCorrect[0][0]) + '-' + str(doubt.orderedCorrect[0][2]) + ':' + str(doubt.orderedIncorrect[0][0]) + '-' + str(doubt.orderedIncorrect[0][2])])
 
 
 
