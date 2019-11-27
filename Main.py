@@ -1,9 +1,10 @@
 # import sys  # argv for test file path
 import sys
 import csv
+import os
 from collections import OrderedDict
 
-# python Main.py Support/Files/logs-2018-2/3934.1D/SERVICE_log_3934.1D.csv Support/Files/logs-2018-2/3934.1D/gabaritoPCompreensao_3934.1D.txt 44 4 day
+# python Main.py Support/Files/logs-2018-2/3934.1D/SERVICE_log_3934.1D.csv Support/Files/logs-2018-2/3934.1D/gabaritoPCompreensao_3934.1D.txt 44 4 day class
 
 from br.icomp.ufam.metrics.Deviation import Deviation
 from br.icomp.ufam.parse.ParsePetriNet import ParsePetriNet
@@ -16,8 +17,10 @@ from br.icomp.ufam.metrics.WeightedScore import WeightedScore
 from br.icomp.ufam.metrics.Doubt import Doubt
 from br.icomp.ufam.metrics.Confusion import Confusion
 
+
 day = str(sys.argv[5])  # dia da avaliacao
-full_log = BuildFiles(sys.argv[1], day)
+_class = str(sys.argv[6]) # numero da turma
+full_log = BuildFiles(sys.argv[1], day, _class)
 listStudents = full_log.create_list()
 """print('teste de log \n')
 print(full_log)
@@ -33,10 +36,11 @@ answers_list = parseLog(str(gab))
 # for a in answers_list:
 #    print(a)
 
-export = csv.writer(open("Report-" + day + ".csv", "wb"))
+export = csv.writer(open("Report-" + _class + '-' + day + ".csv", "wb"))
 
 for student in listStudents:
-    file = full_log.findFiles('./logs/' + day + '/' + str(student), '.csv')
+    file_student = './logs/' + _class + '/' + day + '/' + str(student)
+    file = full_log.findFiles(file_student, '.csv')
     # print(file)
     net = ParsePetriNet(str(gab)).parse_csv_file(str(file[0]), answers_list)
     matrix = Matrix(net)
@@ -66,18 +70,6 @@ for student in listStudents:
     #duvida
     doubt = Doubt(score.corrects, score.incorrect, 3)
     doubt.doubtLevel()
-    """
-    if not doubt.orderedCorrect:
-        doubt.orderedCorrect[0][0].append(0)
-        doubt.orderedCorrect[0][1].append(0)
-        doubt.orderedCorrect[0][2].append(0)
-
-    if not doubt.orderedIncorrect:
-        doubt.orderedIncorrect[0][0].append(0)
-        doubt.orderedIncorrect[0][1].append(0)
-        doubt.orderedIncorrect[0][2].append(0)
-    """
-
 
     """print(net)
     print('\n==PONTUACAO TRADICIONAL==\n')
@@ -93,14 +85,22 @@ for student in listStudents:
         FORMAT REPORT.CSV
         id_student, score, weight_score, deviation_level, most_correct_question_doubt - value : most_incorrect_question_doubt - value
     """
-    if not doubt.orderedCorrect:
-        export.writerow([str(student), str(score.score), str(w_score.score), str(dev.scoreD), 'Qx' + '-' + '0' + ':' + str(doubt.orderedIncorrect[0][0]) + '-' + str(doubt.orderedIncorrect[0][2])])
-    elif not doubt.orderedIncorrect:
-        export.writerow([str(student), str(score.score), str(w_score.score), str(dev.scoreD), str(doubt.orderedCorrect[0][0]) + '-' + str(doubt.orderedCorrect[0][2]) + ':' + 'Qx' + '-' + '0'])
-    elif not doubt.orderedCorrect and not doubt.orderedIncorrect:
-        export.writerow([str(student), str(score.score), str(w_score.score), str(dev.scoreD), 'Qx' + '-' + '0' + ':' + 'Qx' + '-' + '0'])
+    if os.path.getsize(file_student + '/' + str(student) + '.csv') > 0:
+        if not doubt.orderedCorrect:
+            # export.writerow([str(student), str(score.score), str(w_score.score), str(dev.scoreD), 'Qx' + '-' + '0' + ':' + str(doubt.orderedIncorrect[0][0]) + '-' + str(doubt.orderedIncorrect[0][2])])
+            pass
+        elif not doubt.orderedIncorrect:
+            # export.writerow([str(student), str(score.score), str(w_score.score), str(dev.scoreD), str(doubt.orderedCorrect[0][0]) + '-' + str(doubt.orderedCorrect[0][2]) + ':' + 'Qx' + '-' + '0'])
+            pass
+        elif not doubt.orderedCorrect and not doubt.orderedIncorrect:
+            # export.writerow([str(student), str(score.score), str(w_score.score), str(dev.scoreD), 'Qx' + '-' + '0' + ':' + 'Qx' + '-' + '0'])
+            pass
+        else:
+            export.writerow([str(student), str(score.score), str(w_score.score), str(dev.scoreD), str(doubt.orderedCorrect[0][0]) + '-' + str(doubt.orderedCorrect[0][2]) + ':' + str(doubt.orderedIncorrect[0][0]) + '-' + str(doubt.orderedIncorrect[0][2])])
     else:
-        export.writerow([str(student), str(score.score), str(w_score.score), str(dev.scoreD), str(doubt.orderedCorrect[0][0]) + '-' + str(doubt.orderedCorrect[0][2]) + ':' + str(doubt.orderedIncorrect[0][0]) + '-' + str(doubt.orderedIncorrect[0][2])])
+        pass
+
+    
 
 print('\n Report exported \n')
 

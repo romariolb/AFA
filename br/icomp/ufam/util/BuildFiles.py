@@ -7,11 +7,12 @@ import time
 
 class BuildFiles:
 
-    def __init__(self, file, day):
+    def __init__(self, file, day, sclass):
         self.log = file
         self.day = day
         self.student = None
         self.listStudents = []
+        self.sclass = sclass
 
     def __str__(self):
         text = ''
@@ -46,7 +47,7 @@ class BuildFiles:
         # print(self.listStudents)
 
     def verify_file(self, student):
-        dir = './logs/' + self.day + '/' +student
+        dir = './logs/' + self.sclass + '/' + self.day + '/' +student
         if not os.path.exists(dir):
             os.makedirs(dir)
         elif not os.path.isdir(dir):
@@ -80,7 +81,7 @@ class BuildFiles:
         for i in self.listStudents:
             # print('.')
             self.progress_bar(self.listStudents.index(i), tam_progress, 30)
-            name_file_w = './logs/' + self.day + '/' +str(i) + '/' + str(i) + '.csv'
+            name_file_w = './logs/' + self.sclass + '/' + self.day + '/' +str(i) + '/' + str(i) + '.csv'
             file_w = open(name_file_w, 'w')
             file_r = open(self.log, 'r')
 
