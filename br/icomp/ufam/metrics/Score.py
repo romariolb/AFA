@@ -2,14 +2,18 @@ from br.icomp.ufam.petrinet.PNetPlace import PNetPlace
 
 
 def findPlace(index, answers_list, net):
-    tmp = answers_list[index]
+    tmp = answers_list[index] # ['answer', time, question]
     # print(tmp)
     tmp2 = tmp[2]
+    # print(tmp2)
     # tmp = tmp2[0]
 
     for item in net.listP:
+        # print(item)
         # print('{} {}'.format(item[0], tmp2))
         if item[0] == tmp2:
+            # print('retornou \n')
+            # print(item)
             return item
         else:
             pass

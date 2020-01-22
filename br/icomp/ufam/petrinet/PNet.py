@@ -9,10 +9,14 @@ class PNet:
         self.listP = []  # List of places. Tuple: place id, Value: place
         self.listT = []  # List of transitions. Tuple: transition id, Value: event
         self.listA = []  # List or arcs
+        self.f_out = []  # Lista de quantas vezes o estudante passou por uma resposta correta
         # self.places = dict(ID='', name='', type='', initMarking='')
         # self.transitions = dict(ID='', name='', expGuard='', preBinding='', code='', var='')
         # self.arcs = dict(ID='', source='', target='', inscription='')
 
+    def getFOut(self):
+        return self.f_out
+    
     def return_weigth(self, source, target):
         for arc in self.listA:
             if source == arc.source and target == arc.target:

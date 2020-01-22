@@ -43,6 +43,8 @@ for student in listStudents:
     file = full_log.findFiles(file_student, '.csv')
     # print(file)
     net = ParsePetriNet(str(gab)).parse_csv_file(str(file[0]), answers_list)
+    print(str(student))
+    print(net.getFOut())
     matrix = Matrix(net)
     matrix.setMatrixI()
     matrix.setMatrixO()

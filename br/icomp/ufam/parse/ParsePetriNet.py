@@ -4,6 +4,40 @@ from br.icomp.ufam.petrinet.PNetPlace import PNetPlace
 from br.icomp.ufam.petrinet.PNetTransition import PNetTransition
 from br.icomp.ufam.petrinet.PNetArc import PNetArc
 
+def isInFOut(question, f_out):
+    if f_out != []:
+        for item in f_out:
+            if question == item[0]:
+                indice = f_out.index(item)
+                return indice
+            else:
+                pass
+    else:
+        return False
+    return False
+
+
+def isCorrectCount(question, f_out):
+    inFOut = isInFOut(question, f_out)
+    if inFOut != False:
+        f_out[inFOut][1] += 1
+        return f_out
+    else:
+        f_out.append([str(question), 1])
+        return f_out
+    return f_out
+    """if f_out != []:
+        for item in f_out:
+            if question == item[0]:
+                indice = f_out.index(item)
+                f_out[indice][1] += 1
+            else:
+                print('entrou no else')
+                f_out.append([str(question), 1])
+    else:
+        f_out.append([str(question), 1])
+    return f_out"""
+
 
 def returnArc(source, target, net):
     """
@@ -137,6 +171,7 @@ class ParsePetriNet:
         self.student = None
         self.net = PNet()
         self.f_input = f_input
+        
         # print('criou obj NET {}'.format(self.net))
 
     def __str__(self):
@@ -315,6 +350,14 @@ class ParsePetriNet:
                 i = return_index(QUESTAO + 'V', self.net)
 
                 if verifyG == 1:
+
+                    """
+                    Entra aqui se a resposta for a desejada. Aqui e onde cria o arco para o lugar de verificacao.
+                    posso contar quantas vezes o aluno passou pela correta aqui
+                    """
+                    # print(QUESTAO)
+                    # print(self.net.getFOut())
+                    self.net.f_out = isCorrectCount(QUESTAO, self.net.f_out)
 
                     if self.net.listP[i][1].last == 1:
                         arc0 = PNetArc(self.net.listP[i], last, self.net.listP[i][1].count, self.net)

@@ -68,7 +68,7 @@ class PNetExe:
 
     def initMark(self):
         size = self.matrix.colunas
-        print(str(size))
+        # print(str(size))
         for i in range(size):
             if i == self.numQuestions:
                 self.marking.append(1)
@@ -105,6 +105,9 @@ class PNetExe:
                 for t in range(self.matrix.linhas):
                     if self.matrix.matrizI[t][mark] == self.marking[mark]:
                         preBinding = self.matrix.net.listT[t][1].preBinding
+                        # print('begin')
+                        # print(preBinding)
+                        # print('end')
                         length = len(preBinding)
                         count = 0
                         for binding in preBinding:
