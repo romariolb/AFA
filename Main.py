@@ -1,21 +1,22 @@
 # import sys  # argv for test file path
-import sys
 import csv
 import os
+import sys
 from collections import OrderedDict
+
+from br.icomp.ufam.metrics.Confusion import Confusion
+from br.icomp.ufam.metrics.Deviation import Deviation
+from br.icomp.ufam.metrics.Doubt import Doubt
+from br.icomp.ufam.metrics.Score import Score
+from br.icomp.ufam.metrics.WeightedScore import WeightedScore
+from br.icomp.ufam.parse.ParsePetriNet import ParsePetriNet
+from br.icomp.ufam.util.BuildFiles import BuildFiles
+from br.icomp.ufam.util.Matrix import Matrix
+from br.icomp.ufam.util.ParserGabarito import parseLog
+from br.icomp.ufam.util.PNetExe import PNetExe
 
 # python Main.py Support/Files/logs-2018-2/3934.1D/SERVICE_log_3934.1D.csv Support/Files/logs-2018-2/3934.1D/gabaritoPCompreensao_3934.1D.txt 44 4 day class
 
-from br.icomp.ufam.metrics.Deviation import Deviation
-from br.icomp.ufam.parse.ParsePetriNet import ParsePetriNet
-from br.icomp.ufam.util.Matrix import Matrix
-from br.icomp.ufam.util.PNetExe import PNetExe
-from br.icomp.ufam.util.ParserGabarito import parseLog
-from br.icomp.ufam.util.BuildFiles import BuildFiles
-from br.icomp.ufam.metrics.Score import Score
-from br.icomp.ufam.metrics.WeightedScore import WeightedScore
-from br.icomp.ufam.metrics.Doubt import Doubt
-from br.icomp.ufam.metrics.Confusion import Confusion
 
 
 day = str(sys.argv[5])  # dia da avaliacao
@@ -37,6 +38,10 @@ answers_list = parseLog(str(gab))
 #    print(a)
 
 export = csv.writer(open("Report-" + _class + '-' + day + ".csv", "wb"))
+class_correct = []
+class_questions = []
+
+confusion = Confusion()
 
 for student in listStudents:
     file_student = './logs/' + _class + '/' + day + '/' + str(student)
@@ -44,7 +49,7 @@ for student in listStudents:
     # print(file)
     net = ParsePetriNet(str(gab)).parse_csv_file(str(file[0]), answers_list)
     print(str(student))
-    print(net.getFOut())
+    # print(net.getFOut())
     matrix = Matrix(net)
     matrix.setMatrixI()
     matrix.setMatrixO()
@@ -57,7 +62,9 @@ for student in listStudents:
     score = Score(exe.marking, int(n_q), net, n_f, answers_list)
     score.calculus()
     correct = score.getCorrects()
+    confusion.num_corrects(correct) # para a metrica de confusao
     incorrect = score.getIncorrect()
+    confusion.count_marks_questions(incorrect)
     # w_score
     w_score = WeightedScore(exe.marking, n_q, net, n_f, correct, incorrect)
     w_score.listIncorrects()
@@ -81,9 +88,8 @@ for student in listStudents:
     print('\n==PERCENTUAL DE DESVIO==\n')
     print(dev)
     print('\n==NIVEL DE DUVIDA==\n')
-    print(doubt)"""
+    print(doubt)
 
-    """
         FORMAT REPORT.CSV
         id_student, score, weight_score, deviation_level, most_correct_question_doubt - value : most_incorrect_question_doubt - value
     """
@@ -102,7 +108,10 @@ for student in listStudents:
     else:
         pass
 
-    
+#confusao
+confusion.total_marks_corrects()
+confusion.confusionLevel()
+print(confusion)   
 
 print('\n Report exported \n')
 
